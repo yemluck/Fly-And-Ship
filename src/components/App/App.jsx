@@ -16,7 +16,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
+import LandingPageFlyer from '../LandingPageFlyer/LandingPageFlyer';
+import LandingPageShipper from '../LandingPageShipper/LandingPageShipper'
+import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
@@ -84,7 +86,7 @@ function App() {
 
           <Route
             exact
-            path="/registration"
+            path="/DefaultPage"
           >
             {user.id ?
               // If the user is already logged in, 
@@ -92,7 +94,7 @@ function App() {
               <Redirect to="/user" />
               :
               // Otherwise, show the registration page
-              <RegisterPage />
+              <DefaultPage />
             }
           </Route>
 
@@ -106,8 +108,21 @@ function App() {
               <Redirect to="/user" />
               :
               // Otherwise, show the Landing page
-              <LandingPage />
+              <DefaultPage />
             }
+          </Route>
+          <Route
+            exact
+            path="/landingPageF"
+          >
+            <LandingPageFlyer />
+          </Route>
+
+          <Route
+            exact
+            path="/landingPageS"
+          >
+            <LandingPageShipper />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
