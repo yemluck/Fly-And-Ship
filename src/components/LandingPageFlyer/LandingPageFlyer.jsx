@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './LandingPage.css';
+import './LandingPageFlyer.css';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-function LandingPage() {
+function LandingPageFlyer() {
   const [heading, setHeading] = useState('Welcome');
   const history = useHistory();
+  const type = true
 
   const onLogin = (event) => {
     history.push('/login');
@@ -52,7 +53,7 @@ function LandingPage() {
           </p>
         </div>
         <div className="grid-col grid-col_4">
-          <RegisterForm />
+          <RegisterForm type={type}/>
 
           <center>
             <h4>Already a Member?</h4>
@@ -66,4 +67,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default LandingPageFlyer;
