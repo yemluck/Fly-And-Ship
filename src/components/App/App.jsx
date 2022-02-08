@@ -23,6 +23,7 @@ import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Itinerary from '../ItineraryPage/ItineraryPage';
+import Request from '../RequestPage/RequestPage';
 
 import './App.css';
 
@@ -105,6 +106,14 @@ function App() {
           >
             <Itinerary />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/request"
+          >
+            <Request />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact

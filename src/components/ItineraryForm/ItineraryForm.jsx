@@ -35,7 +35,7 @@ function ItineraryForm() {
                 userId: user.id
             }
         })
-        history.push('/userF')
+        //history.push('/userF')
     }
 
     return(
@@ -143,10 +143,11 @@ function ItineraryForm() {
             onChange={(event) => setNote(event.target.value)}
         />
         </label>
+        </div>
         <div>
             <input className="btn" type="submit" name="create" value="Create" />
         </div>
-        </div> 
+        
         
         </form>
     )
