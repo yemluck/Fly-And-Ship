@@ -23,6 +23,7 @@ import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Itinerary from '../ItineraryPage/ItineraryPage';
+import Request from '../RequestPage/RequestPage';
 
 import './App.css';
 
@@ -35,9 +36,11 @@ function App() {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
-
+  ;
   const renderThing = () => {
+    console.log("user type", user.type);
     switch(user.type){
+
       case 'flyer':
         return <Redirect to="/userF" />;
       case 'shipper':
@@ -103,6 +106,14 @@ function App() {
           >
             <Itinerary />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/request"
+          >
+            <Request />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact

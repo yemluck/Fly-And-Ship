@@ -143,10 +143,11 @@ function ItineraryForm() {
             onChange={(event) => setNote(event.target.value)}
         />
         </label>
+        </div>
         <div>
             <input className="btn" type="submit" name="create" value="Create" />
         </div>
-        </div> 
+        
         
         </form>
     )

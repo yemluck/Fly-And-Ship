@@ -1,6 +1,7 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './UserPageShipper.css'
 
 function UserPageShipper() {
@@ -26,7 +27,7 @@ function UserPageShipper() {
                 <p> Flyers</p>
             </div>
             <div>
-                <button onClick={onCreateRequest}>create request</button>
+                <Link to="/request"><button onClick={onCreateRequest}>create request</button></Link>
             </div>
             <LogOutButton className="btn" />
         </div>
