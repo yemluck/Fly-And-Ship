@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 function ItineraryForm() {
     const history = useHistory();
+    const dispatch = useDispatch();
     // this is the logged in user
     const user=useSelector(store => store.user)
 
