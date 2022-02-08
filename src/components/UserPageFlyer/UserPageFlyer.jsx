@@ -1,7 +1,8 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
-import './UserPageFlyer.css'
+import './UserPageFlyer.css';
+import { Link } from 'react-router-dom';
 
 const onCreateItinerary = () => {
   console.log('in onCreateItinerary');
@@ -28,7 +29,7 @@ function UserPageFlyer() {
         <p> Shipping requests</p>
       </div>
       <div>
-        <button onClick={onCreateItinerary}>create Itinerary</button>
+        <Link to="/itinerary"> <button onClick={onCreateItinerary}>create Itinerary</button> </Link>
       </div>
       <LogOutButton className="btn" />
     </div>

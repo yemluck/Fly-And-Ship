@@ -22,6 +22,7 @@ import LandingPageShipper from '../LandingPageShipper/LandingPageShipper';
 import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Itinerary from '../ItineraryPage/ItineraryPage';
 
 import './App.css';
 
@@ -45,6 +46,17 @@ function App() {
         return <LoginPage />
     }
 
+  }
+
+  const renderDefault = () => {
+    switch (user.type) {
+      case 'flyer':
+        return <Redirect to="/userF" />;
+      case 'shipper':
+        return <Redirect to="/userS" />;
+      case undefined:
+        return <DefaultPage />
+    }
   }
 
 
@@ -86,6 +98,12 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+            exact
+            path="/itinerary"
+          >
+            <Itinerary />
+          </ProtectedRoute>
+          <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
@@ -97,7 +115,7 @@ function App() {
             exact
             path="/DefaultPage"
           >
-            <DefaultPage />
+            {renderDefault()}
           </Route>
 
           <Route
@@ -121,14 +139,28 @@ function App() {
             exact
             path="/landingPageF"
           >
-            <LandingPageFlyer />
+            {
+              user.type === 'flyer' ?
+                <Redirect to="/userF" />
+                :
+                // otherwise, show the registration page
+                <LandingPageFlyer />
+            }
+            {/* <LandingPageFlyer /> */}
           </Route>
 
           <Route
             exact
             path="/landingPageS"
           >
-            <LandingPageShipper />
+            {
+              user.type === 'shipper' ?
+                <Redirect to="/userS" />
+                :
+                // otherwise, show the registration page
+                <LandingPageShipper />
+            }
+            {/* <LandingPageShipper /> */}
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
