@@ -35,9 +35,11 @@ function App() {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
-
+  ;
   const renderThing = () => {
+    console.log("user type", user.type);
     switch(user.type){
+
       case 'flyer':
         return <Redirect to="/userF" />;
       case 'shipper':
