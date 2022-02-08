@@ -35,7 +35,7 @@ function ItineraryForm() {
                 userId: user.id
             }
         })
-        //history.push('/userF')
+        history.push('/userF')
     }
 
     return(

@@ -32,7 +32,7 @@ function RequestForm(){
                 userId: user.id
             }
         })
-
+        history.push('/userS')
     }
 
     return(
@@ -65,7 +65,7 @@ function RequestForm(){
                 <label htmlFor="earliestPickup">
                     Earliest pickup:
                     <input
-                        type="text"
+                        type="date"
                         name="earliestPickup"
                         value={earliestPickup}
                         required
@@ -77,7 +77,7 @@ function RequestForm(){
                 <label htmlFor="latestDelivery">
                     Latest delivery:
                     <input
-                        type="text"
+                        type="date"
                         name="latestDelivery"
                         value={latestDelivery}
                         required
