@@ -8,7 +8,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 function LandingPageShipper() {
     const [heading, setHeading] = useState('Welcome');
     const history = useHistory();
-    const type = false
+    const type = 'shipper'
 
     const onLogin = (event) => {
         history.push('/login');
@@ -53,7 +53,7 @@ function LandingPageShipper() {
                     </p>
                 </div>
                 <div className="grid-col grid-col_4">
-                    <RegisterForm type={false}/>
+                    <RegisterForm type={type}/>
 
                     <center>
                         <h4>Already a Member?</h4>

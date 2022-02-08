@@ -8,7 +8,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 function LandingPageFlyer() {
   const [heading, setHeading] = useState('Welcome');
   const history = useHistory();
-  const type = true
+  const type = "flyer"
 
   const onLogin = (event) => {
     history.push('/login');

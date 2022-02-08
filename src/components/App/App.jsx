@@ -14,10 +14,11 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
+import UserPageFlyer from '../UserPageFlyer/UserPageFlyer';
+import UserPageShipper from '../UserPageShipper/UserPageShipper';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPageFlyer from '../LandingPageFlyer/LandingPageFlyer';
-import LandingPageShipper from '../LandingPageShipper/LandingPageShipper'
+import LandingPageShipper from '../LandingPageShipper/LandingPageShipper';
 import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -32,6 +33,20 @@ function App() {
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
+
+
+  const renderThing = () => {
+    switch(user.type){
+      case 'flyer':
+        return <Redirect to="/userF" />;
+      case 'shipper':
+        return <Redirect to="/userS" />;
+      case undefined:
+        return <LoginPage />
+    }
+
+  }
+
 
   return (
     <Router>
@@ -57,9 +72,17 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
+            path="/userF"
           >
-            <UserPage />
+            <UserPageFlyer />
+          </ProtectedRoute>
+          
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/userS"
+          >
+            <UserPageShipper />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -72,29 +95,17 @@ function App() {
 
           <Route
             exact
-            path="/login"
+            path="/DefaultPage"
           >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the login page
-              <LoginPage />
-            }
+            <DefaultPage />
           </Route>
 
           <Route
             exact
-            path="/DefaultPage"
+            path="/login"
           >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the registration page
-              <DefaultPage />
+            {
+              renderThing()
             }
           </Route>
 
@@ -102,13 +113,8 @@ function App() {
             exact
             path="/home"
           >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the Landing page
-              <DefaultPage />
+            {
+              renderThing()
             }
           </Route>
           <Route

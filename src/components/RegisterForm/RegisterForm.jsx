@@ -26,7 +26,7 @@ function RegisterForm({type}) {
         lastName: lastName,
         contact: contact,
         email: email,
-        type: type
+        type: type // this is passed down as props
       },
     });
   }; // end registerUser
@@ -72,18 +72,6 @@ function RegisterForm({type}) {
             value={lastName}
             required
             onChange={(event) => setLastName(event.target.value)}
-          />
-        </label>   
-      </div>
-      <div>
-        <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={username}
-            required
-            onChange={(event) => setUsername(event.target.value)}
           />
         </label>   
       </div>

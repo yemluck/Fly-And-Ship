@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 
-function LandingPage2 () {
+function DefaultPage () {
     const history = useHistory();
 
    
@@ -32,10 +33,12 @@ function LandingPage2 () {
 
                 <button onClick={onSelectShipper}> shipper </button>
 
+                <p>or <Link to="/login">login</Link> to an existing account</p>
+
 
 
         </>
     )
 }
 
-export default LandingPage2
+export default DefaultPage;
