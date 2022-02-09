@@ -12,6 +12,7 @@ function RequestForm(){
     const [destinationCountry, setDestinationCountry] = useState('');
     const [earliestPickup, setEarliestPickup] = useState('');
     const [latestDelivery, setLatestDelivery] = useState('');
+    const [itemWeight, setItemWeight] = useState('');
     const [description, setDescription] = useState('');
     const [contact, setContact] = useState('');
     const [email, setEmail] = useState('')
@@ -26,6 +27,7 @@ function RequestForm(){
                 destinationCountry: destinationCountry,
                 earliestPickup: earliestPickup,
                 latestDelivery: latestDelivery,
+                itemWeight: itemWeight,
                 description: description,
                 contact: contact,
                 email: email,
@@ -85,6 +87,18 @@ function RequestForm(){
                         value={latestDelivery}
                         required
                         onChange={(event) => setLatestDelivery(event.target.value)}
+                    />
+                </label>
+            </div>   
+            <div>
+                <label htmlFor="itemWeight">
+                    Max weight:
+                    <input
+                        type="number"
+                        name="itemWeight"
+                        value={itemWeight}
+                        required
+                        onChange={(event) => setItemWeight(event.target.value)}
                     />
                 </label>
             </div>            
