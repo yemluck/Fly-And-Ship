@@ -34,6 +34,18 @@ function RequestForm(){
                 userId: user.id
             }
         })
+
+        // dispatch to fetch matching results i.e itinerary matching request
+        dispatch ({
+            type: 'FETCH_REQUEST_RESULT',
+            payload: {
+                country: destinationCountry,
+                pickup: earliestPickup,
+                delivery: latestDelivery,
+                weight: itemWeight
+            }
+        })
+
         dispatch({
             type: 'FETCH_REQUEST'
         })
