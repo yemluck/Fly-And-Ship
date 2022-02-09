@@ -42,13 +42,13 @@ function UserPageShipper() {
                             <div className="requestBox2"
                             key={request.id}
                             >
-                                <h4>{request.location}</h4>
-                                <h4>{request.destination_country}</h4>
-                                <h4>{request.earliest_pickup}</h4>
-                                <h4>{request.latest_delivery}</h4>
-                                <h4>{request.contact}</h4>
-                                <h4>{request.email}</h4>
-                                <h4>{request.item_description}</h4>
+                                <h4>Location: {request.location}</h4>
+                                <h4>Destination country: {request.destination_country}</h4>
+                                <h4>Earliest pickup: {request.earliest_pickup}</h4>
+                                <h4>Latest delivery: {request.latest_delivery}</h4>
+                                <h4>Phone No: {request.contact}</h4>
+                                <h4>Email: {request.email}</h4>
+                                <h4>Item description: {request.item_description}</h4>
                                 <button>edit</button>
                                 <button>delete</button>
                             </div>

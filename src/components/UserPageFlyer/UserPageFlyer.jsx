@@ -44,14 +44,14 @@ function UserPageFlyer() {
               <div className="itineraryBox2"
               key={itinerary.id}
               >
-                <h4>{itinerary.departing_city}</h4>
-                <h4>{itinerary.departure_date}</h4>
-                <h4>{itinerary.arrival_date}</h4>
-                <h4>{itinerary.destination_country}</h4>
-                <h4>{itinerary.destination_city}</h4>
-                <h4>{itinerary.location}</h4>
-                <h4>{itinerary.note}</h4>
-                <h4>{itinerary.weight_limit}</h4>
+                <h4>Departing City: {itinerary.departing_city}</h4>
+                <h4>Departure date: {itinerary.departure_date}</h4>
+                <h4>Arrival date: {itinerary.arrival_date}</h4>
+                <h4>Destination country: {itinerary.destination_country}</h4>
+                <h4>Destination City: {itinerary.destination_city}</h4>
+                <h4>Location: {itinerary.location}</h4>
+                <h4>Note: {itinerary.note}</h4>
+                <h4>Weight Limit: {itinerary.weight_limit}</h4>
                 <button>edit</button>
                 <button>delete</button>
               </div>

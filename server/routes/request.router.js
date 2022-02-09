@@ -20,8 +20,10 @@ router.get('/request', (req, res) => {
     // Add query to fetch request
     const queryText = `
         SELECT
-            "id", "location", "destination_country", "earliest_pickup",
-            "latest_delivery", "item_description", "contact", "email"
+            "id", "location", "destination_country", 
+            TO_CHAR("earliest_pickup", 'MM-DD-YY') AS earliest_pickup,
+            TO_CHAR("latest_delivery", 'MM-DD-YY') AS latest_delivery,
+             "item_description", "contact", "email"
         FROM
             "request"
         WHERE
