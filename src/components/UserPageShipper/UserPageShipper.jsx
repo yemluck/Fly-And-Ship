@@ -9,8 +9,12 @@ function UserPageShipper() {
     const dispatch = useDispatch()
     // this component doesn't do much to start, just renders some user reducer info to the DOM
     const user = useSelector((store) => store.user);
-    const requests = useSelector(store => store.request)
+    const requests = useSelector(store => store.request);
     console.log('this is the requests in the store', requests);
+    const results = useSelector(store => store.result)
+    console.log('this is the results', results);
+
+
     const onCreateRequest = () => {
         console.log('in onCreateRequest');
     }
@@ -61,6 +65,24 @@ function UserPageShipper() {
             </div>
             <div className="flyerBox">
                 <p> Flyers</p>
+                {
+                    results.map( result => {
+                        return (
+                            <div className="requestBox2"
+                            key={result.id}
+                            >
+                                <h4>Destination: {result.destination_country}</h4>
+                                <h4>City: {result.destination_city}</h4>
+                                <h4>Departure date:{result.departure_date}</h4>
+                                <h4>Arrival date: {result.arrival_date}</h4>
+                                <h4>Max weight: {result.weight_limit}</h4>
+                                <h4>Comment: {result.note}</h4>
+                                <button> contact </button>
+                                <button> delete </button>
+                            </div>
+                        )
+                    })
+                }
             </div>
             <div>
                 <Link to="/request"><button onClick={onCreateRequest}>create request</button></Link>
