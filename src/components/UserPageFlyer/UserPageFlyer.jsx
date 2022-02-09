@@ -10,6 +10,8 @@ function UserPageFlyer() {
   const dispatch = useDispatch();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const itineraries = useSelector(store => store.itinerary)
+  console.log('this is the itineraries from the store', itineraries);
   console.log('this is the user:', user);
 
   const onCreateItinerary = () => {
@@ -36,6 +38,25 @@ function UserPageFlyer() {
       </div>
       <div className="itineraryBox">
         <p> Itineraries are here</p>
+        {
+          itineraries.map((itinerary, index) => {
+            return (
+              <div className="itineraryBox2"
+              key={index}
+              >
+                <h4>{itinerary.departing_city}</h4>
+                <h4>{itinerary.departure_date}</h4>
+                <h4>{itinerary.arrival_date}</h4>
+                <h4>{itinerary.destination_country}</h4>
+                <h4>{itinerary.destination_city}</h4>
+                <h4>{itinerary.location}</h4>
+                <h4>{itinerary.note}</h4>
+                <h4>{itinerary.weight_limit}</h4>
+              </div>
+            )
+          })
+
+        }
       </div>
       <div className="shippingRequestBox">
         <p> Shipping requests</p>
