@@ -32,6 +32,9 @@ function RequestForm(){
                 userId: user.id
             }
         })
+        dispatch({
+            type: 'FETCH_REQUEST'
+        })
         history.push('/userS')
     }
 

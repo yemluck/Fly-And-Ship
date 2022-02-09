@@ -27,3 +27,9 @@
     /* margin: auto; */
     margin: 5px;
 }
+
+.requestBox2 {
+  
+    border: 2px solid black;
+    margin: 2px
+}

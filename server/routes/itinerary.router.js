@@ -12,9 +12,38 @@ const router = express.Router();
 router.get('/', rejectUnauthenticated, (req, res) => {
     // Send back user object from the session (previously queried from the database)
     res.send(req.user);
-    console.log('reg.user');
+    console.log('reg.user id is',req.user.id);
 
 });
+
+router.get('/itinerary', (req, res) => {
+    // Add query to fetch itinerary
+    const queryText = `
+        SELECT 
+            "id", "location", "departing_city", "destination_country",
+            "destination_city", "weight_limit", "departure_date",
+            "arrival_date", "note"
+        FROM 
+            "itinerary"
+        WHERE
+            "user_id" = $1
+    
+    `;
+
+    const queryParams = [
+        req.user.id
+    ];
+
+    pool.query(queryText, queryParams)
+        .then( result => { 
+            res.send(result.rows)
+        })
+        .catch(err => {
+            console.log('Error getting itinerary', err);
+            res.sendStatus(500)
+            
+        })
+})
 
 // POST endpoint
 router.post('/itinerary', (req, res, next) => {
