@@ -61,9 +61,9 @@ function UserPageFlyer() {
         }
        
       </div>
-      <div className="shippingRequestBox">
+      {/* <div className="shippingRequestBox">
         <p> Shipping requests</p>
-      </div>
+      </div> */}
       <div>
         <Link to="/itinerary"> <button onClick={onCreateItinerary}>create Itinerary</button> </Link>
       </div>
