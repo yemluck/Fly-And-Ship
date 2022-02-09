@@ -9,8 +9,12 @@ function UserPageShipper() {
     const dispatch = useDispatch()
     // this component doesn't do much to start, just renders some user reducer info to the DOM
     const user = useSelector((store) => store.user);
-    const requests = useSelector(store => store.request)
+    const requests = useSelector(store => store.request);
     console.log('this is the requests in the store', requests);
+    const results = useSelector(store => store.result)
+    console.log('this is the results', results);
+
+    
     const onCreateRequest = () => {
         console.log('in onCreateRequest');
     }
