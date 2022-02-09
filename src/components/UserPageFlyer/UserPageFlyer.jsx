@@ -39,10 +39,10 @@ function UserPageFlyer() {
       <div className="itineraryBox">
         <p> Itineraries are here</p>
         {
-          itineraries.map((itinerary, index) => {
+          itineraries.map((itinerary) => {
             return (
               <div className="itineraryBox2"
-              key={index}
+              key={itinerary.id}
               >
                 <h4>{itinerary.departing_city}</h4>
                 <h4>{itinerary.departure_date}</h4>
@@ -52,11 +52,14 @@ function UserPageFlyer() {
                 <h4>{itinerary.location}</h4>
                 <h4>{itinerary.note}</h4>
                 <h4>{itinerary.weight_limit}</h4>
+                <button>edit</button>
+                <button>delete</button>
               </div>
             )
           })
 
         }
+       
       </div>
       <div className="shippingRequestBox">
         <p> Shipping requests</p>

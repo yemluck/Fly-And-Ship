@@ -20,7 +20,7 @@ router.get('/itinerary', (req, res) => {
     // Add query to fetch itinerary
     const queryText = `
         SELECT 
-            "location", "departing_city", "destination_country",
+            "id", "location", "departing_city", "destination_country",
             "destination_city", "weight_limit", "departure_date",
             "arrival_date", "note"
         FROM 

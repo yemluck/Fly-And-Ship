@@ -16,6 +16,33 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 });
 
+router.get('/request', (req, res) => {
+    // Add query to fetch request
+    const queryText = `
+        SELECT
+            "id", "location", "destination_country", "earliest_pickup",
+            "latest_delivery", "item_description", "contact", "email"
+        FROM
+            "request"
+        WHERE
+            "user_id" = $1
+    `
+
+    const queryParams = [
+        req.user.id
+    ]
+
+    pool.query(queryText, queryParams)
+        .then( result => {
+            res.send(result.rows)
+        })
+        .catch(err => {
+            console.log('Error getting request', err);
+            res.sendStatus(500)
+        })
+})
+
+// POST endpoint
 router.post('/request', (req, res, next) => {
     const location = req.body.location;
     const destinationCountry = req.body.destinationCountry;
