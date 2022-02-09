@@ -21,7 +21,6 @@ import LandingPageFlyer from '../LandingPageFlyer/LandingPageFlyer';
 import LandingPageShipper from '../LandingPageShipper/LandingPageShipper';
 import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
 import Itinerary from '../ItineraryPage/ItineraryPage';
 import Request from '../RequestPage/RequestPage';
 
