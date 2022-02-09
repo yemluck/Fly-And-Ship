@@ -34,6 +34,10 @@ function ItineraryForm() {
                 note: note,
                 userId: user.id
             }
+        });
+
+        dispatch({
+            type: 'FETCH_ITINERARY'
         })
         history.push('/userF')
     }
