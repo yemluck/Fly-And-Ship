@@ -23,7 +23,7 @@ router.get('/request', (req, res) => {
             "id", "location", "destination_country", 
             TO_CHAR("earliest_pickup", 'MM-DD-YY') AS earliest_pickup,
             TO_CHAR("latest_delivery", 'MM-DD-YY') AS latest_delivery,
-             "item_description", "contact", "email"
+             "item_weight", "item_description", "contact", "email"
         FROM
             "request"
         WHERE
@@ -50,6 +50,7 @@ router.post('/request', (req, res, next) => {
     const destinationCountry = req.body.destinationCountry;
     const earliestPickup = req.body.earliestPickup;
     const latestDelivery = req.body.latestDelivery;
+    const itemWeight = req.body.itemWeight;
     const description = req.body.description;
     const contact = req.body.contact;
     const email = req.body.email;
@@ -58,9 +59,9 @@ router.post('/request', (req, res, next) => {
     const queryText = `
         INSERT INTO "request"
             ("location", "destination_country", "earliest_pickup", "latest_delivery",
-            "item_description", "contact", "email", "user_id")
+            "item_weight", "item_description", "contact", "email", "user_id")
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9)
     `
 
     const queryParams = [
@@ -68,6 +69,7 @@ router.post('/request', (req, res, next) => {
         destinationCountry,
         earliestPickup,
         latestDelivery,
+        itemWeight,
         description,
         contact,
         email,
