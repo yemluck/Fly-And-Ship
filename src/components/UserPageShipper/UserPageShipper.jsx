@@ -28,6 +28,12 @@ function UserPageShipper() {
 
     const selectRequest = (request) => {
         console.log('in selectRequest');
+        //dispatch to fetch individual request detail
+        dispatch({
+            type: 'REQUEST_DETAIL',
+            payload: Number(request.id)
+        })
+    
         // move to detail page for individual request
         history.push(`/request/shipper/${request.id}`)
     }
