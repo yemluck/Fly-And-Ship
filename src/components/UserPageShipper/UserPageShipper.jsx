@@ -1,12 +1,13 @@
 import React, {  useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './UserPageShipper.css';
 
 function UserPageShipper() {
-
-    const dispatch = useDispatch()
+    
+    const history = useHistory();
+    const dispatch = useDispatch();
     // this component doesn't do much to start, just renders some user reducer info to the DOM
     const user = useSelector((store) => store.user);
     const requests = useSelector(store => store.request);
@@ -25,7 +26,11 @@ function UserPageShipper() {
         dispatch({type: 'FETCH_REQUEST'});
     }, []); // end useEffect
 
-
+    const selectRequest = (request) => {
+        console.log('in selectRequest');
+        // move to detail page for individual request
+        history.push(`/request/shipper/${request.id}`)
+    }
 
 
 
@@ -45,6 +50,7 @@ function UserPageShipper() {
                         return (
                             <div className="requestBox2"
                             key={request.id}
+                            onClick = {() => selectRequest(request)}
                             >
                                 <h4>Location: {request.location}</h4>
                                 <h4>Destination country: {request.destination_country}</h4>

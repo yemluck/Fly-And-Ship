@@ -23,6 +23,8 @@ import DefaultPage from '../DefaultPage/DefaultPage';
 import LoginPage from '../LoginPage/LoginPage';
 import Itinerary from '../ItineraryPage/ItineraryPage';
 import Request from '../RequestPage/RequestPage';
+import RequestDetail from '../RequestDetail/RequestDetail';
+import ItineraryDetail from '../ItineraryDetail/ItineraryDetail';
 
 import './App.css';
 
@@ -111,6 +113,20 @@ function App() {
             path="/request"
           >
             <Request />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/request/shipper/:id"
+          >
+            <RequestDetail />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/itinerary/flyer/:id"
+          >
+            <ItineraryDetail />
           </ProtectedRoute>
 
           <ProtectedRoute
