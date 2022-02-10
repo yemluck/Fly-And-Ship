@@ -8,7 +8,12 @@ function RequestDetail() {
 
     const dispatch = useDispatch
     const params = useParams()
-    console.log('params', params);
+    console.log('params', params.id);
+
+    dispatch ({
+        type: 'REQUEST_DETAIL',
+        payload: Number(params.id)
+    })
 
     //instead of getting from store, I need to dispatch
     // and get the request with the ID of the request

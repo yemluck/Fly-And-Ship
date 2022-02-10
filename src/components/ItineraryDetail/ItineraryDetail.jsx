@@ -9,6 +9,11 @@ function ItineraryDetail() {
     const params = useParams();
     console.log('params', params);
 
+    dispatch({
+        type: 'ITINERARY_DETAIL',
+        payload: Number(params.id)
+    })
+
     return(
         <>
         <h1> In itinerary details</h1>
