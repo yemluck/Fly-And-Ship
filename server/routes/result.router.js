@@ -32,7 +32,11 @@ router.get('/result', (req, res) => {
     
     // Add query to fetch result
     const queryText = `
-        SELECT *
+        SELECT 
+            "id", "location", "departing_city", "destination_country",
+            "destination_city", "weight_limit", "note",
+            TO_CHAR("departure_date", 'MM-DD-YY') AS departure_date,
+            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date
         FROM itinerary
         WHERE
             arrival_date < TO_DATE($1, 'YYYY-MM-DD') AND
