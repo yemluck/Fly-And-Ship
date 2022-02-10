@@ -8,7 +8,7 @@ function Request () {
 
     return(
         <>
-        <h1> this is the request page </h1>
+        <h1> this is the  create request page </h1>
         <h3> Welcome {user.first_name} </h3>
         <h4> You are a : {user.type} </h4>
         <RequestForm />
