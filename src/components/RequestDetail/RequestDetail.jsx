@@ -1,10 +1,12 @@
 import './RequestDetail.css'
 import { Link, useParams  } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 
 
 
 function RequestDetail() {
 
+    const dispatch = useDispatch
     const params = useParams()
     console.log('params', params);
 

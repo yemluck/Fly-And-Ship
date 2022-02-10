@@ -1,13 +1,18 @@
 import './ItineraryDetail.css'
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
+import { Link, useParams } from 'react-router-dom';
+import { useSelector, useDispatch} from 'react-redux'
 
 
 function ItineraryDetail() {
 
+    const dispatch = useDispatch
+    const params = useParams();
+    console.log('params', params);
+
     return(
         <>
+        <h1> In itinerary details</h1>
+        <Link to="/userF"><button> Back to Dashboard </button></Link>
         </>
     )
 

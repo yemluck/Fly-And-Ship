@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import './UserPageFlyer.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 function UserPageFlyer() {
 
+  const history = useHistory();
   const dispatch = useDispatch();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
@@ -23,8 +24,13 @@ function UserPageFlyer() {
     // dispatch to fetch user itineraries
     dispatch({type: 'FETCH_ITINERARY'});
     // There's opportunity to dispatch more than one type
-
   }, []); // end useEffect
+
+  const selectItinerary = (itinerary) => {
+    console.log('in selectItinerary');
+    // move to detail page for individual itinerary
+    history.push(`/itinerary/flyer/${itinerary.id}`)
+  }
 
   return (
     <div className="container">
@@ -43,6 +49,7 @@ function UserPageFlyer() {
             return (
               <div className="itineraryBox2"
               key={itinerary.id}
+              onClick = {() => selectItinerary(itinerary)}
               >
                 <h4>Departing City: {itinerary.departing_city}</h4>
                 <h4>Departure date: {itinerary.departure_date}</h4>

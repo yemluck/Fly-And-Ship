@@ -57,8 +57,6 @@ function UserPageShipper() {
                                 <h4>Earliest pickup: {request.earliest_pickup}</h4>
                                 <h4>Latest delivery: {request.latest_delivery}</h4>
                                 <h4>Max weight: {request.item_weight}</h4>
-                                <h4>Phone No: {request.contact}</h4>
-                                <h4>Email: {request.email}</h4>
                                 <h4>Item description: {request.item_description}</h4>
                                 <button>edit</button>
                                 <button>delete</button>
