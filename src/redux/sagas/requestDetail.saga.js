@@ -10,7 +10,12 @@ function* fetchRequestDetail(action) {
         {params: {
             id: action.payload
         }}
-        )
+        );
+
+        console.log('request detail result from server', requestDetail.data);
+        // send response from server to reducer
+        yield put ({type: 'SET_REQUEST_DETAIL', payload: requestDetail.data})
+    
     } catch (error){
         console.log('Error fetching request detail', error);
         
