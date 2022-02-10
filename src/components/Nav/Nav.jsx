@@ -21,10 +21,10 @@ function Nav() {
           </Link>
         )}
 
-        {/* If a user is logged in, show these links */}
-        {user.id && (
+        {/* If a flyer is logged in, show these links */}
+        {user.type === 'flyer' && (
           <>
-            <Link className="navLink" to="/user">
+            <Link className="navLink" to="/userF">
               Home
             </Link>
 
@@ -33,6 +33,21 @@ function Nav() {
             </Link>
 
             <LogOutButton className="navLink" to="/login"/>
+          </>
+        )} 
+        
+        {/* If a shipper is logged in, show these links */}
+        {user.type === 'shipper' && (
+          <>
+            <Link className="navLink" to="/userS">
+              Home
+            </Link>
+
+            <Link className="navLink" to="/info">
+              Info Page
+            </Link>
+
+            <LogOutButton className="navLink" to="/login" />
           </>
         )}
 
