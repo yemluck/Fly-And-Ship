@@ -1,0 +1,13 @@
+.itineraryDetailBox {
+    border: 2px solid black;
+}
+
+.detailBox {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+    border: 2px solid black;
+    padding-bottom: 10px;
+    /* margin: auto; */
+    margin: 5px;
+}

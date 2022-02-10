@@ -28,6 +28,11 @@ function UserPageFlyer() {
 
   const selectItinerary = (itinerary) => {
     console.log('in selectItinerary');
+
+    dispatch({
+      type: 'ITINERARY_DETAIL',
+      payload: Number(itinerary.id)
+    })
     // move to detail page for individual itinerary
     history.push(`/itinerary/flyer/${itinerary.id}`)
   }

@@ -11,8 +11,9 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const itineraryRouter = require('./routes/itinerary.router');
 const requestRouter = require('./routes/request.router');
-const resultRouter = require('./routes/result.router')
-const requestDetailRouter = require('./routes/requestDetail.router')
+const resultRouter = require('./routes/result.router');
+const requestDetailRouter = require('./routes/requestDetail.router');
+const itineraryDetailRouter = require('./routes/itineraryDetail.router');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,6 +31,7 @@ app.use('/api/user', itineraryRouter);
 app.use('/api/user', requestRouter);
 app.use('/api/user', resultRouter);
 app.use('/api/user/', requestDetailRouter);
+app.use('/api/user/', itineraryDetailRouter);
 
 // Serve static files
 app.use(express.static('build'));

@@ -6,6 +6,7 @@ import itinerarySaga from './itinerary.saga';
 import requestSaga from './request.saga';
 import resultSaga from './result.saga';
 import requestDetailSaga from './requestDetail.saga';
+import itineraryDetailSaga from './itineraryDetail.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -22,6 +23,7 @@ export default function* rootSaga() {
     itinerarySaga(),
     requestSaga(),
     resultSaga(),
-    requestDetailSaga()
+    requestDetailSaga(),
+    itineraryDetailSaga()
   ]);
 }
