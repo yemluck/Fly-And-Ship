@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import './UserPageFlyer.css';
@@ -12,6 +12,8 @@ function UserPageFlyer() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const itineraries = useSelector(store => store.itinerary)
+  const image = useSelector(store => store.photoReducer)
+  console.log('this is my photo from the store', image);
   console.log('this is the itineraries from the store', itineraries);
   console.log('this is the user:', user);
 
@@ -43,6 +45,34 @@ function UserPageFlyer() {
     })
   }
 
+  // setup to upload profile picture
+  // initial state
+  const [photo, setPhoto] = useState();
+
+  // run this function on submission of upload form
+  const onUploadPhoto = (evt) => {
+    evt.preventDefault();
+    console.log('in onUploadPhoto');
+    const data = new FormData();
+
+    data.append('image', photo)
+
+    // dispatch to saga
+    dispatch({
+      type: 'UPLOAD',
+      payload: data
+    })
+
+    dispatch({
+      type: 'GET_PHOTO'
+    })
+  }
+
+
+
+
+
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
@@ -51,8 +81,17 @@ function UserPageFlyer() {
       <p> Your last name is: {user.last_name}</p>
       <div className="userProfileBox">
         <p>profile picture here</p>
-        <div></div>
-        <button>upload picture</button>
+        <img alt="profile pix" src={`public/images/${image.path}`} />
+        <div>
+            {/* <img alt="profile pix" src={{../../photo}}
+          want to append the profile picture here */}
+        </div>
+
+        <form onSubmit={onUploadPhoto}>
+          <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/>
+          <input type="submit" name="upload" vale="upload" />
+        </form>
+        
       </div>
       <div className="itineraryBox">
         <p> Itineraries are here</p>
