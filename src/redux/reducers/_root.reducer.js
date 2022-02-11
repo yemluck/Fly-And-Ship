@@ -6,6 +6,7 @@ import request from './request.reducer';
 import result from './result.reducer';
 import requestDetail from './requestDetail.reducer';
 import itineraryDetail from './itineraryDetail.reducer';
+import photoReducer from './photo.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   request,
   result,
   requestDetail,
-  itineraryDetail
+  itineraryDetail,
+  photoReducer
 });
 
 export default rootReducer;
