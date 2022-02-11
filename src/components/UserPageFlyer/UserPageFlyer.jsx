@@ -66,6 +66,8 @@ function UserPageFlyer() {
     dispatch({
       type: 'GET_PHOTO'
     })
+
+    setPhoto('');
   }
 
 
@@ -80,18 +82,15 @@ function UserPageFlyer() {
       <p> Your type is: {user.type}</p>
       <p> Your last name is: {user.last_name}</p>
       <div className="userProfileBox">
-        <p>profile picture here</p>
-        <img alt="profile pix" src={`public/images/${image.path}`} />
+       
+        <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
+        
         <div>
-            {/* <img alt="profile pix" src={{../../photo}}
-          want to append the profile picture here */}
-        </div>
-
         <form onSubmit={onUploadPhoto}>
-          <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/>
+          <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/><br></br>
           <input type="submit" name="upload" vale="upload" />
         </form>
-        
+        </div>
       </div>
       <div className="itineraryBox">
         <p> Itineraries are here</p>
