@@ -100,7 +100,7 @@ function ItineraryForm() {
         <label htmlFor='weightLimit'>
             Weight limit:
         <input
-            type="text"
+            type="number"
             name="weightLimit"
             value={weightLimit}
             required

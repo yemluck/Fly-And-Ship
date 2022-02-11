@@ -51,9 +51,10 @@ function UserPageFlyer() {
       <p> Your last name is: {user.last_name}</p>
       <div className="userProfileBox">
         <p>profile picture here</p>
+        <div></div>
         <button>upload picture</button>
       </div>
-      <div className="itineraryBoxt">
+      <div className="itineraryBox">
         <p> Itineraries are here</p>
         {
           itineraries.map((itinerary) => {

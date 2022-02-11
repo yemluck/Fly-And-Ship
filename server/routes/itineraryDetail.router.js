@@ -22,7 +22,8 @@ router.get('/itineraryDetail', (req, res) => {
 
     const queryText = `
         SELECT 
-            "id", "location", "departing_city", "destination_city",
+            "id", "location", "departing_city",
+            "destination_country", "destination_city",
             "weight_limit", 
             TO_CHAR("departure_date", 'MM-DD-YY') AS departure_date,
             TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date,
