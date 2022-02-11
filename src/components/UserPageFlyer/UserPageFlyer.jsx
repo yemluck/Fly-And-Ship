@@ -33,6 +33,16 @@ function UserPageFlyer() {
     history.push(`/itinerary/flyer/${itinerary.id}`)
   }
 
+  const deleteItinerary = (id) => {
+    // id is being sent from the client on click of delete button
+    // now the id is dispatched as payload to delete saga
+    console.log('in deleteItinerary', id);
+    dispatch({
+      type: 'DELETE_ITINERARY',
+      payload: id
+    })
+  }
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
@@ -43,11 +53,12 @@ function UserPageFlyer() {
         <p>profile picture here</p>
         <button>upload picture</button>
       </div>
-      <div className="itineraryBox">
+      <div className="itineraryBoxt">
         <p> Itineraries are here</p>
         {
           itineraries.map((itinerary) => {
             return (
+              <>
               <div className="itineraryBox2"
               key={itinerary.id}
               onClick = {() => selectItinerary(itinerary)}
@@ -60,9 +71,11 @@ function UserPageFlyer() {
                 <h4>Location: {itinerary.location}</h4>
                 <h4>Note: {itinerary.note}</h4>
                 <h4>Weight Limit: {itinerary.weight_limit}</h4>
+                </div>
                 <button>edit</button>
-                <button>delete</button>
-              </div>
+                <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
+             
+              </>
             )
           })
 

@@ -16,7 +16,7 @@ function RequestDetail() {
 
 
    const request = useSelector(store => store.requestDetail);
-   // console.log('this is the request from the store', request);
+   console.log('this is the request from the store', request);
 
     const requestId = params.id
     
@@ -37,17 +37,19 @@ function RequestDetail() {
 
     return(
         <>
+        <div className="detailBox">
         <h1> In request detail </h1>
-        <h3>{request.id}</h3>
-        <h3>{request.item_description}</h3>
-        <h3>{request.item_weight}</h3>
-        <h3>{request.destination_country}</h3>
-        <h3>{request.earliest_pickup}</h3>
-        <h3>{request.latest_delivery}</h3>
-        <h3>{request.location}</h3>
-        <h3>{request.contact}</h3>
-        <h3>{request.email}</h3>
-
+        <div className="requestDetailBox">
+        <h3>Item description: {request.item_description}</h3>
+        <h3>Item weight: {request.item_weight}</h3>
+        <h3>Destination country: {request.destination_country}</h3>
+        <h3>Earliest pickup: {request.earliest_pickup}</h3>
+        <h3>Latest delivery: {request.latest_delivery}</h3>
+        <h3>Present location: {request.location}</h3>
+        <h3>Phone no: {request.contact}</h3>
+        <h3>Email: {request.email}</h3>
+        </div>
+        </div>
         
 
          <Link to="/userS"> <button> Back to Dashboard</button></Link>

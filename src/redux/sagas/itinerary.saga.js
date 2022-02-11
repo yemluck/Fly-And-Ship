@@ -29,10 +29,24 @@ function* fetchItinerary(action) {
     }
 } // end function fetch itinerary
 
+function* deleteItinerary(action) {
+    try{
+        const response = yield axios.delete(`/api/user/itinerary/${action.payload}`)
+        // call the fetch function to get back itinerary and 
+        //rerender
+        yield put({
+            type: 'FETCH_ITINERARY'
+        })
+    } catch (error) {
+        console.log('Error deleting itinerary', error);
+        
+    }
+}
 
 function* itinerarySaga() {
     yield takeLatest('CREATE_ITINERARY', createItinerary);
     yield takeEvery('FETCH_ITINERARY', fetchItinerary);
+    yield takeLatest('DELETE_ITINERARY', deleteItinerary)
 }
 
 export default itinerarySaga;

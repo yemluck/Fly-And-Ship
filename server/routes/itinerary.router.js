@@ -86,5 +86,23 @@ router.post('/itinerary', (req, res, next) => {
         })
 })
 
+// delete endpoint
+router.delete('/itinerary/:id', (req, res) => {
+    console.log('id is', req.params.id);
+
+    const queryText =  `
+        DELETE FROM "itinerary"
+        WHERE id = $1
+    `
+    const queryParam = [req.params.id]
+
+    pool.query(queryText, queryParam)
+        .then(() => res.sendStatus(200))
+        .catch((err) => {
+            console.log('Error completing DELETE', err);
+            res.sendStatus(500);
+        })
+    
+})
 
 module.exports = router
