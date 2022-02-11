@@ -16,9 +16,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 });
 
-router.get('/requestDetail', (req, res) => {
-    console.log('this is req.query', Number(req.query.id));
-    const id = Number(req.query.id)
+router.get('/requestDetail/:id', (req, res) => {
+    console.log('this is req.query', req.params.id);
+    //const id = Number(req.query.id)
 
     const queryText =  `
         SELECT 
@@ -32,11 +32,11 @@ router.get('/requestDetail', (req, res) => {
             "id" = $1
     `;
 
-    const queryParam = [ id ];
+    const queryParam = [ req.params.id ];
 
     pool.query(queryText, queryParam)
         .then ( result => {
-            res.send(result.rows);
+            res.send(result.rows[0]);
             console.log('this is results.rows', result.rows);
             
         })

@@ -6,10 +6,8 @@ function* fetchRequestDetail(action) {
     console.log('This is the action', action);
     
     try {
-        const requestDetail = yield axios.get('/api/user/requestDetail',
-        {params: {
-            id: action.payload
-        }}
+        const requestDetail = yield axios.get(`/api/user/requestDetail/${action.payload}`
+        
         );
 
         console.log('request detail result from server', requestDetail.data);

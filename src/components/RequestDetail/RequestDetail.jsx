@@ -1,5 +1,5 @@
 import './RequestDetail.css'
-import { Link  } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 
@@ -7,9 +7,27 @@ import React, { useEffect } from 'react';
 
 function RequestDetail() {
 
-    const request = useSelector(store => store.requestDetail[0]);
-    console.log('this is the request from the store', request);
+    const dispatch = useDispatch()
+    const params = useParams();
+    // console.log to check details info
+    console.log(params);
+    console.log('this is the params id', params.id);
+    console.log('type of params.id:', typeof params.id );
 
+
+   const request = useSelector(store => store.requestDetail);
+   // console.log('this is the request from the store', request);
+
+    const requestId = params.id
+    
+   useEffect(() => {
+        dispatch({
+            type: 'REQUEST_DETAIL',
+            payload: requestId
+        })
+    }, [requestId])
+
+ 
     //instead of getting from store, I need to dispatch
     // and get the request with the ID of the request
     // from the server

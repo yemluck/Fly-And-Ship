@@ -21,7 +21,12 @@ router.get('/itineraryDetail', (req, res) => {
     const id = Number(req.query.id)
 
     const queryText = `
-        SELECT *
+        SELECT 
+            "id", "location", "departing_city", "destination_city",
+            "weight_limit", 
+            TO_CHAR("departure_date", 'MM-DD-YY') AS departure_date,
+            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date,
+            "note", "user_id"
         FROM "itinerary"
         WHERE
             "id" = $1
@@ -31,7 +36,7 @@ router.get('/itineraryDetail', (req, res) => {
 
     pool.query(queryText, queryParam)
         .then ( result => {
-            res.send(result.rows);
+            res.send(result.rows[0]);
             console.log('this is result.rows', result.rows);
         })
         .catch ( err => {
