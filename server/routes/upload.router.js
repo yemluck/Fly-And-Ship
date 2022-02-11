@@ -40,7 +40,7 @@ router.post('/upload', upload.single('image'), (req, res, next) => {
             ($1, $2)
     `
     const queryParams = [
-        req.file.originalname,
+        req.file.filename,
         req.user.id
     ]
 
