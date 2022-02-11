@@ -25,11 +25,25 @@ function* fetchRequest(){
     }
 }
 
+function* deleteRequest(action) {
+    try{
+        const response = yield axios.delete(`/api/user/request/${action.payload}`)
+        // call the fetch function to get back requests and rerender
+        yield put({
+            type: 'FETCH_REQUEST'
+        })
+    } catch (error) {
+        console.log('Error deleting request', error);
+        
+    }
+}
+
 
 
 function* requestSaga() {
     yield takeLatest('CREATE_REQUEST', createRequest);
-    yield takeEvery('FETCH_REQUEST', fetchRequest)
+    yield takeEvery('FETCH_REQUEST', fetchRequest);
+    yield takeLatest('DELETE_REQUEST', deleteRequest)
 }
 
 

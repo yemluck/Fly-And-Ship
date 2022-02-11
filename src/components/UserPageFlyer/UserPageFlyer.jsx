@@ -58,10 +58,10 @@ function UserPageFlyer() {
         {
           itineraries.map((itinerary) => {
             return (
-              <>
+              
               <div className="itineraryBox2"
               key={itinerary.id}
-              onClick = {() => selectItinerary(itinerary)}
+              
               >
                 <h4>Departing City: {itinerary.departing_city}</h4>
                 <h4>Departure date: {itinerary.departure_date}</h4>
@@ -71,11 +71,10 @@ function UserPageFlyer() {
                 <h4>Location: {itinerary.location}</h4>
                 <h4>Note: {itinerary.note}</h4>
                 <h4>Weight Limit: {itinerary.weight_limit}</h4>
-                </div>
-                <button>edit</button>
+                <button onClick={() => selectItinerary(itinerary)}>edit</button>
                 <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
              
-              </>
+              </div>
             )
           })
 

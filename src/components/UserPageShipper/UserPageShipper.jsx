@@ -33,6 +33,13 @@ function UserPageShipper() {
         history.push(`/request/shipper/${request.id}`)
     }
 
+    const deleteRequest = (id) => {
+        console.log('in deleteRequest', id);
+        dispatch({
+            type: 'DELETE_REQUEST',
+            payload: id
+        })
+    }
 
 
     return (
@@ -51,7 +58,7 @@ function UserPageShipper() {
                         return (
                             <div className="requestBox2"
                             key={request.id}
-                            onClick = {() => selectRequest(request)}
+                            
                             >
                                 <h4>Location: {request.location}</h4>
                                 <h4>Destination country: {request.destination_country}</h4>
@@ -59,8 +66,8 @@ function UserPageShipper() {
                                 <h4>Latest delivery: {request.latest_delivery}</h4>
                                 <h4>Max weight: {request.item_weight}</h4>
                                 <h4>Item description: {request.item_description}</h4>
-                                <button>edit</button>
-                                <button>delete</button>
+                                <button onClick={() => selectRequest(request)}>edit</button>
+                                <button onClick={() => deleteRequest(request.id)}>delete</button>
                             </div>
                         )
                     })
