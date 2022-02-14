@@ -37,13 +37,14 @@ function UserPageShipper() {
     }
 
     const deleteRequest = (id) => {
-        console.log('in deleteRequest', id);
+        //console.log('in deleteRequest', id);
 
         swal({
             title: "Delete?",
-            text: "Are you sure, click yes to continue or anywhere else to cancel ",
-            icon: "info",
-            button: "yes"
+            text: "Are you sure, this is irreversible ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
         })
             .then((value) => {
                 if (value) {

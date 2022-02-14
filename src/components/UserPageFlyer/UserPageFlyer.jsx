@@ -43,13 +43,14 @@ function UserPageFlyer() {
   const deleteItinerary = (id) => {
     // id is being sent from the client on click of delete button
     // now the id is dispatched as payload to delete saga
-    console.log('in deleteItinerary', id);
+    //console.log('in deleteItinerary', id);
 
     swal({
       title: "Delete?",
-      text: "Are you sure, click yes to continue or anywhere else to cancel ",
-      icon: "info",
-      button: "yes"
+      text: "Are you sure? this is irreversible ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
     })
     .then((value) => {
       if (value) {
