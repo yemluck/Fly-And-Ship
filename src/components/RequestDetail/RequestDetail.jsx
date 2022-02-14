@@ -2,7 +2,9 @@ import './RequestDetail.css'
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import swal from 'sweetalert'
 
 
 function RequestDetail() {
@@ -57,9 +59,16 @@ function RequestDetail() {
     console.log('this is the searchResult', searchResult);
 
 
-    const contactFlyer = () => {
+    const contactFlyer = (result) => {
         console.log('in contactFlyer');
+        // swal(`${result.first_name} ${result.last_name} `,`Phone No: ${result.contact} Email: ${result.email}`)
+        swal({
+            title: `${result.first_name} ${result.last_name} `,
+            text: `Phone No: ${result.contact} Email: ${result.email}`
+        })
     }
+
+   
 
     return(
         <>
@@ -82,15 +91,6 @@ function RequestDetail() {
                 <h2>Available flyers matching request</h2>
             </div>
               
-                   {/* TO DO: Join the user table
-                   to the query so I can easily
-                   access the customer name 
-                   searchResult: arrival_date, contact, departing_city, departure_date,
-                   destination_city, destination_country, email, first_name, last_name,
-                   location, note, weight_limit
-                   
-                   
-                   */}
 
                    {
                        searchResult.map(result => {
@@ -106,7 +106,14 @@ function RequestDetail() {
                                    <h3> Arrival date: {result.arrival_date}</h3>
                                    <h3> Maximum weight limit: {result.weight_limit}</h3>
                                    <h3> Note: {result.note}</h3>
-                                   <button onClick={contactFlyer}><h3>Contact</h3></button>
+                                   <Popup trigger={<button onClick={contactFlyer}><h3>Contact</h3></button>} position="right center">
+                                       <div>
+                                       <h3> Flyer's Name: {result.first_name} {result.last_name}</h3>
+                                       <h3> Contact: {result.contact}</h3>
+                                       <h3> email: {result.email}</h3>
+                                       </div>
+                                   </Popup>
+                                   {/* <button onClick={() => contactFlyer(result)}><h3> Contact </h3></button> */}
 
                                 </div>
 
@@ -114,14 +121,7 @@ function RequestDetail() {
                        })
 
                    }
-                   {/* <h3> Location: {searchResult.location}</h3>
-                   <h3> Departing city: {searchResult.departing_city}</h3>
-                   <h3> Destination country: {searchResult.destination_country}</h3>
-                   <h3> Destination city: {searchResult.destination_city}</h3>
-                   <h3> Departure date: {searchResult.departure_date}</h3>
-                   <h3> Arrival date: {searchResult.arrival_date}</h3>
-                   <h3> Maximum weight limit: {searchResult.weight_limit}</h3>
-                   <h3> Note: {searchResult.note}</h3> */}
+               
                 
             </div>
             
