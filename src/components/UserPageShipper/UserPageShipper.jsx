@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import './UserPageShipper.css';
+import swal from 'sweetalert';
 
 function UserPageShipper() {
     
@@ -37,11 +38,30 @@ function UserPageShipper() {
 
     const deleteRequest = (id) => {
         console.log('in deleteRequest', id);
-        dispatch({
-            type: 'DELETE_REQUEST',
-            payload: id
+
+        swal({
+            title: "Delete?",
+            text: "Are you sure, click yes to continue or anywhere else to cancel ",
+            icon: "info",
+            button: "yes"
         })
-    }
+            .then((value) => {
+                if (value) {
+                    swal("Poof! deleted", { icon: "success" })
+                    dispatch({
+                        type: 'DELETE_REQUEST',
+                        payload: id
+                    }) // end dispatch
+                } else {
+                    swal("Request not deleted")
+                }
+            })
+        
+        // dispatch({
+        //     type: 'DELETE_REQUEST',
+        //     payload: id
+        // }) // end dispatch
+    } // end function deleteRequest
 
     // setup to upload profile picture
     // initial state

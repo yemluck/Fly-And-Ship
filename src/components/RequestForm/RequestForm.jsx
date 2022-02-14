@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function RequestForm(){
     const history = useHistory();
@@ -33,23 +34,34 @@ function RequestForm(){
                 email: email,
                 userId: user.id
             }
-        })
+        });
 
-        // dispatch to fetch matching results i.e itinerary matching request
-        dispatch ({
-            type: 'FETCH_REQUEST_RESULT',
-            payload: {
-                country: destinationCountry,
-                pickup: earliestPickup,
-                delivery: latestDelivery,
-                weight: itemWeight
-            }
+        swal({
+            title: "Shipping Request Created",
+            text: "New shipping request created, contact flyers with matching Itinerary",
+            icon: "success",
+            button: "✅"
         })
+            .then((value) => {
+                // dispatch to fetch matching results i.e itinerary matching request
+                dispatch({
+                    type: 'FETCH_REQUEST_RESULT',
+                    payload: {
+                        country: destinationCountry,
+                        pickup: earliestPickup,
+                        delivery: latestDelivery,
+                        weight: itemWeight
+                    }
+                })
+                // dispatch to fetch newly created requests and old requests
+                dispatch({
+                    type: 'FETCH_REQUEST'
+                })
+                // back to dashboard
+                history.push('/userS')
+            })
 
-        dispatch({
-            type: 'FETCH_REQUEST'
-        })
-        history.push('/userS')
+
     }
 
     return(
