@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import './UserPageFlyer.css';
 import { Link, useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 function UserPageFlyer() {
@@ -43,10 +44,25 @@ function UserPageFlyer() {
     // id is being sent from the client on click of delete button
     // now the id is dispatched as payload to delete saga
     console.log('in deleteItinerary', id);
-    dispatch({
-      type: 'DELETE_ITINERARY',
-      payload: id
+
+    swal({
+      title: "Delete?",
+      text: "Are you sure, click yes to continue or anywhere else to cancel ",
+      icon: "info",
+      button: "yes"
     })
+    .then((value) => {
+      if (value) {
+        swal("Poof! deleted", { icon: "success"})
+      dispatch({
+        type: 'DELETE_ITINERARY',
+        payload: id
+      }) // end dispatch
+    } else {
+      swal("Itinerary not deleted")
+    }
+    })
+  
   }
 
   // setup to upload profile picture

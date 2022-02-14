@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert'
 
 function ItineraryForm() {
     const history = useHistory();
@@ -36,10 +37,19 @@ function ItineraryForm() {
             }
         });
 
-        dispatch({
-            type: 'FETCH_ITINERARY'
+        swal({
+            title: "Itinerary created",
+            text: "New itinerary created, wait for shippers to contact you",
+            icon: "success",
+            button: "✅"
         })
-        history.push('/userF')
+        .then((value) => {
+            dispatch({
+                type: 'FETCH_ITINERARY'
+            }) // end dispatch
+            history.push('/userF')
+        })
+       
     }
 
     return(
@@ -142,7 +152,7 @@ function ItineraryForm() {
             type="text"
             name="note"
             value={note}
-            required
+           
             placeholder="8. Enter any comment"
             onChange={(event) => setNote(event.target.value)}
         />
