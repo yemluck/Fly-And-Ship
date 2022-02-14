@@ -26,11 +26,38 @@ function* fetchRequestResult(action){
     }
 }
 
+function* fetchDetailRequestResult(action){
+
+    try {
+        const result = yield axios.get('/api/user/detailResult',
+            {
+                params: {
+                    destination_country: action.payload.country,
+                    arrival_date: action.payload.delivery,
+                    departure_date: action.payload.pickup,
+                    weight_limit: action.payload.weight
+
+                }
+            });
+        //console.log('*************', {params: destination_country});
+
+        console.log('get result', result.data);
+        // send response from server to reducer
+       yield put({ type: 'SET_DETAIL_RESULT', payload: result.data })
+
+
+    } catch (error) {
+        console.log('Error fetching request results', error);
+    }
+
+}
 
 
 
 function* resultSaga () {
-    yield takeEvery('FETCH_REQUEST_RESULT', fetchRequestResult)
+    yield takeEvery('FETCH_REQUEST_RESULT', fetchRequestResult),
+    yield takeEvery('FETCH_DETAIL_REQUEST_RESULT', fetchDetailRequestResult)
+    
 }
 
 export default resultSaga
