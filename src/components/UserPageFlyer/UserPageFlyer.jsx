@@ -25,6 +25,10 @@ function UserPageFlyer() {
   useEffect(() => {
     // dispatch to fetch user itineraries
     dispatch({type: 'FETCH_ITINERARY'});
+    dispatch({
+      type: 'GET_PHOTO'
+    })
+
     // There's opportunity to dispatch more than one type
   }, []); // end useEffect
 
@@ -63,9 +67,7 @@ function UserPageFlyer() {
       payload: data
     })
 
-    dispatch({
-      type: 'GET_PHOTO'
-    })
+   
 
     setPhoto('');
   }
