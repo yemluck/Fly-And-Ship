@@ -57,6 +57,10 @@ function RequestDetail() {
     console.log('this is the searchResult', searchResult);
 
 
+    const contactFlyer = () => {
+        console.log('in contactFlyer');
+    }
+
     return(
         <>
         <div className="detailBox">
@@ -80,7 +84,13 @@ function RequestDetail() {
               
                    {/* TO DO: Join the user table
                    to the query so I can easily
-                   access the customer name */}
+                   access the customer name 
+                   searchResult: arrival_date, contact, departing_city, departure_date,
+                   destination_city, destination_country, email, first_name, last_name,
+                   location, note, weight_limit
+                   
+                   
+                   */}
 
                    {
                        searchResult.map(result => {
@@ -96,6 +106,7 @@ function RequestDetail() {
                                    <h3> Arrival date: {result.arrival_date}</h3>
                                    <h3> Maximum weight limit: {result.weight_limit}</h3>
                                    <h3> Note: {result.note}</h3>
+                                   <button onClick={contactFlyer}><h3>Contact</h3></button>
 
                                 </div>
 

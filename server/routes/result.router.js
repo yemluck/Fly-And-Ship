@@ -33,11 +33,14 @@ router.get('/result', (req, res) => {
     // Add query to fetch result
     const queryText = `
         SELECT 
-            "id", "location", "departing_city", "destination_country",
+            "itinerary"."id", itinerary."location", "departing_city", "destination_country",
             "destination_city", "weight_limit", "note",
             TO_CHAR("departure_date", 'MM-DD-YY') AS departure_date,
-            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date
+            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date,
+            "user".first_name, "user".last_name, "user".contact, "user".email
         FROM itinerary
+        JOIN "user"
+            ON itinerary.user_id = "user".id
         WHERE
             arrival_date < TO_DATE($1, 'YYYY-MM-DD') AND
             departure_date > TO_DATE($2, 'YYYY-MM-DD') AND
@@ -81,11 +84,14 @@ router.get('/detailResult', (req, res) => {
     // Add query to fetch result
     const queryText = `
         SELECT 
-            "id", "location", "departing_city", "destination_country",
+            itinerary."id", itinerary."location", "departing_city", "destination_country",
             "destination_city", "weight_limit", "note",
             TO_CHAR("departure_date", 'MM-DD-YY') AS departure_date,
-            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date
+            TO_CHAR("arrival_date", 'MM-DD-YY') AS arrival_date,
+            "user".first_name, "user".last_name, "user".contact, "user".email
         FROM itinerary
+        JOIN "user"
+            ON itinerary.user_id = "user".id
         WHERE
             arrival_date < TO_DATE($1, 'MM-DD-YY') AND
             departure_date > TO_DATE($2, 'MM-DD-YY') AND
