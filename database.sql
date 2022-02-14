@@ -3,6 +3,7 @@
 -- You must use double quotes in every query that user is in:
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
+-- Database name is solo-project
 
 DROP TABLE "user";
 
@@ -29,12 +30,6 @@ CREATE TABLE "itinerary" (
 	"note" VARCHAR(255),
 	"user_id" INT REFERENCES "user"(id));
 	
-INSERT INTO "itinerary" ( "location", departing_city, destination_country, "destination_city", "weight_limit",
-							"departure_date", arrival_date, "user_id")
-VALUES ('Minneapolis', 'Minneapolis', 'Nigeria', 'Lagos', 30, 'June 6, 2022', 'June 8, 2022', 2),
-		('Minneapolis', 'Minneapolis', 'Nigeria', 'Lagos', 30, '2022-07-05', '2022-07-06', 2);
-		
-SELECT * FROM itinerary;
 
 
 CREATE TABLE "request" (
@@ -43,15 +38,15 @@ CREATE TABLE "request" (
 	"destination_country" VARCHAR (50) NOT NULL,
 	"earliest_pickup" DATE NOT NULL,
 	"latest_delivery" DATE NOT NULL,
+	"item_weight" NUMERIC(10, 2) NOT NULL,
 	"item_description" VARCHAR (255),
 	"contact" VARCHAR(16) NOT NULL,
 	"email" VARCHAR (255),
 	"user_id" INT REFERENCES "user"(id));
-	
 
-INSERT INTO "request" ("location", "destination_country", "earliest_pickup", "latest_delivery", "item_description",
-						"contact", "email", "user_id")
-VALUES ('Brooklyn Center', 'Nigeria', '2022-07-02', 'July 10, 2022', 'Item if fragile',
-		'(612) 123-4567', 'user@shipper.com', 4);
-		
-SELECT * FROM "request";
+
+CREATE TABLE image (
+	"id" SERIAL PRIMARY KEY,
+	"path" VARCHAR(255) NOT NULL,
+	"upload_time" TIMESTAMP DEFAULT CURRENT_TIMESTAMP(2),
+	"user_id" INT REFERENCES "user"(id));
