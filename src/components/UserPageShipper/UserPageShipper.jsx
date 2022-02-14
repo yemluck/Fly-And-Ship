@@ -1,4 +1,4 @@
-import React, {  useEffect } from 'react';
+import React, {  useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
@@ -11,6 +11,7 @@ function UserPageShipper() {
     // this component doesn't do much to start, just renders some user reducer info to the DOM
     const user = useSelector((store) => store.user);
     const requests = useSelector(store => store.request);
+    const image = useSelector(store => store.photoReducer)
     console.log('this is the requests in the store', requests);
     const results = useSelector(store => store.result)
     console.log('this is the results', results);
@@ -24,6 +25,7 @@ function UserPageShipper() {
     useEffect(() => {
         // dispatch to fetch user shipping requests
         dispatch({type: 'FETCH_REQUEST'});
+        dispatch({ type: 'GET_PHOTO'}); // fetch profile picture on page load
     }, []); // end useEffect
 
     const selectRequest = (request) => {
@@ -41,16 +43,45 @@ function UserPageShipper() {
         })
     }
 
+    // setup to upload profile picture
+    // initial state
+    const [photo, setPhoto] = useState();
+
+    // run this function on submission of upload form
+    const onUploadPhoto = (evt) => {
+        evt.preventDefault();
+        console.log('in onUploadPhoto');
+        const data = new FormData();
+
+        data.append('image', photo)
+
+        // dispatch to saga
+        dispatch({
+            type: 'UPLOAD',
+            payload: data
+        })
+
+
+
+        setPhoto('');
+    }
 
     return (
         <div className="container">
             <h2>Welcome, {user.username}!</h2>
             <p>Your ID is: {user.id}</p>
             <p> Your type is: {user.type}</p>
+            <p> Your last name is {user.last_name}</p>
             <div className="userProfileBox">
-                <p>profile picture here</p>
-                <button>upload picture</button>
+                <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
+                <div>
+                    <form onSubmit={onUploadPhoto}>
+                        <input type="file" onChange={(evt) => setPhoto(evt.target.files[0])} /><br></br>
+                        <input type="submit" name="upload" vale="upload" />
+                    </form>
+                </div>
             </div>
+
             <div className="requestBox">
                 <p> requests are here</p>
                 {
