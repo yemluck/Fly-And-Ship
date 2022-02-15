@@ -20,15 +20,15 @@ function RequestDetail() {
    const request = useSelector(store => store.requestDetail);
    console.log('this is the request from the store', request);
 
-    const requestId = params.id
+    //const requestId = params.id
     
     // use useEffect to fetch the information about the selected request
    useEffect(() => {
         dispatch({
             type: 'REQUEST_DETAIL',
-            payload: requestId
+            payload: params.id
         })
-    }, [requestId])
+    }, [params.id])
 
     const searchFlyers  = () => {
         console.log('in on searchFlyers');

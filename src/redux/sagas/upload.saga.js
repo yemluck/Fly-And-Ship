@@ -3,7 +3,7 @@ import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 function* uploadPhoto(action) {
     try{
-        console.log('in uploadPhotoSaga');
+        console.log('in uploadPhotoSaga', action.payload);
         
         yield axios.post('/api/user/upload', action.payload);
         console.log('action.payload is: ', action.payload);
