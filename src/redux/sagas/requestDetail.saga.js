@@ -20,13 +20,28 @@ function* fetchRequestDetail(action) {
     }
 }
 
+function* saveRequest(action) {
+    try {
+        yield axios.put(`api/user/requestDetail/${action.payload.id}`, action.payload);
 
+        // refresh with the latest request data
+        // will be refreshed on the new page
+        // yield put ({
+        //     type: 'REQUEST_DETAIL'
+        // })
+
+    } catch (err) {
+        console.log('Error editing request detail', err);
+        
+    }
+}
 
 
 
 
 function* requestDetailSaga() {
     yield takeLatest('REQUEST_DETAIL', fetchRequestDetail);
+    yield takeLatest('SAVE_REQUEST_CHANGES', saveRequest)
 }
 
 export default requestDetailSaga
