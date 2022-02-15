@@ -118,7 +118,7 @@ function UserPageShipper() {
                                 <h4>Latest delivery: {request.latest_delivery}</h4>
                                 <h4>Max weight: {request.item_weight}</h4>
                                 <h4>Item description: {request.item_description}</h4>
-                                <button onClick={() => selectRequest(request)}>edit</button>
+                                <button onClick={() => selectRequest(request)}>detail</button>
                                 <button onClick={() => deleteRequest(request.id)}>delete</button>
                             </div>
                         )

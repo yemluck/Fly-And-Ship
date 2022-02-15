@@ -22,6 +22,7 @@ function RequestDetail() {
 
     const requestId = params.id
     
+    // use useEffect to fetch the information about the selected request
    useEffect(() => {
         dispatch({
             type: 'REQUEST_DETAIL',
@@ -83,6 +84,7 @@ function RequestDetail() {
         <h3>Present location: {request.location}</h3>
         <h3>Phone no: {request.contact}</h3>
         <h3>Email: {request.email}</h3>
+                    <Link to={`/request/${request.id}/edit`} ><button> <h2> edit </h2> </button></Link>
         </div>
        
         </div>
