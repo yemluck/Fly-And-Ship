@@ -21,8 +21,8 @@ router.get('/request', (req, res) => {
     const queryText = `
         SELECT
             "id", "location", "destination_country", 
-            TO_CHAR("earliest_pickup", 'MM-DD-YY') AS earliest_pickup,
-            TO_CHAR("latest_delivery", 'MM-DD-YY') AS latest_delivery,
+            TO_CHAR("earliest_pickup", 'YYYY-MM-DD') AS earliest_pickup,
+            TO_CHAR("latest_delivery", 'YYYY-MM-DD') AS latest_delivery,
              "item_weight", "item_description", "contact", "email"
         FROM
             "request"
