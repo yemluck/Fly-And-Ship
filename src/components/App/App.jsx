@@ -25,6 +25,7 @@ import Itinerary from '../ItineraryPage/ItineraryPage';
 import Request from '../RequestPage/RequestPage';
 import RequestDetail from '../RequestDetail/RequestDetail';
 import ItineraryDetail from '../ItineraryDetail/ItineraryDetail';
+import background from '../../photos/background3.jpg';
 
 import './App.css';
 
@@ -66,7 +67,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div style={{backgroundImage: `url(${background})`}}>
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}

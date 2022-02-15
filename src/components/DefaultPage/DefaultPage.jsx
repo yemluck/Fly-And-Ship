@@ -9,12 +9,13 @@ function DefaultPage () {
     const history = useHistory();
 
    
-
+    // this function redirects user to the flyer's page
     const onSelectFlyer = () => {
         console.log('in onSelectFlyer');
         history.push("/LandingPageF")
     }
 
+    // this function redirects user to the shipper's page
     const onSelectShipper = () => {
         console.log('in onSelectShipper');
         
