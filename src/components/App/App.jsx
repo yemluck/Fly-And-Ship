@@ -26,6 +26,7 @@ import Request from '../RequestPage/RequestPage';
 import RequestDetail from '../RequestDetail/RequestDetail';
 import ItineraryDetail from '../ItineraryDetail/ItineraryDetail';
 import EditRequest from '../EditRequest/EditRequest';
+import EditItinerary from '../EditItinerary/EditItinerary';
 //import background from '../../photos/background3.jpg'; 
 
 import './App.css';
@@ -132,6 +133,13 @@ function App() {
             path="/request/:id/edit"
           >
             <EditRequest />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/itinerary/:id/edit"
+          >
+            <EditItinerary />
           </ProtectedRoute>
 
           <ProtectedRoute

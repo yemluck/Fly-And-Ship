@@ -31,10 +31,10 @@ function ItineraryDetail() {
             <h3>Departure date: {itinerary.departure_date}</h3>
             <h3>Arrival date: {itinerary.arrival_date}</h3>
             <h3>Maximum weight: {itinerary.weight_limit}</h3>
-            
+                    <Link to={`/itinerary/${itinerary.id}/edit` }><button><h2> edit</h2></button></Link>
         </div>
         </div>
-            <Link to="/userF"><button> Back to Dashboard </button></Link>
+            <Link to="/userF"><button> <h2>Back to Dashboard</h2> </button></Link>
         </>
     )
 
