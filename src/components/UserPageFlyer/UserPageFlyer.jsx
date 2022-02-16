@@ -129,7 +129,7 @@ function UserPageFlyer() {
                 <h4>Location: {itinerary.location}</h4>
                 <h4>Note: {itinerary.note}</h4>
                 <h4>Weight Limit: {itinerary.weight_limit}</h4>
-                <button onClick={() => selectItinerary(itinerary)}>edit</button>
+                <button onClick={() => selectItinerary(itinerary)}>detail</button>
                 <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
              
               </div>
