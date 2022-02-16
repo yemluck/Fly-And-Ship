@@ -6,10 +6,11 @@ import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 // mui imports
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ReadMoreSharpIcon from '@mui/icons-material/ReadMoreSharp';
 
 
 function UserPageFlyer() {
@@ -106,7 +107,7 @@ function UserPageFlyer() {
 
   return (
     <div className="container">
-      <h2>Welcome to your dashboard, {user.username}!</h2>
+      <h2>Welcome to your dashboard, {user.first_name}!</h2>
       
       <div className="userProfileBox">
        
@@ -131,17 +132,17 @@ function UserPageFlyer() {
               
               >
                 <h4 className="cardHeading"><u> Itinerary</u></h4>
-                    <p>Departing City:<b> {itinerary.departing_city}</b> </p>
-                    <p>Departure date: <b> {itinerary.departure_date}</b></p>
-                    <p>Arrival date:<b> {itinerary.arrival_date}</b></p>
-                    <p>Destination country:<b> {itinerary.destination_country} </b></p>
-                    <p>Destination City:<b>{itinerary.destination_city}</b></p>
-                    <p>Location:<b> {itinerary.location}</b></p>
-                    <p>Note: <b>{itinerary.note}</b></p>
-                    <p>Weight Limit: <b>{itinerary.weight_limit}</b></p>
+                    <p>Departing City: {itinerary.departing_city} </p>
+                    <p>Departure date: {itinerary.departure_date}</p>
+                    <p>Arrival date: {itinerary.arrival_date}</p>
+                    <p>Destination country:{itinerary.destination_country} </p>
+                    <p>Destination City:{itinerary.destination_city}</p>
+                    <p>Location:{itinerary.location}</p>
+                    <p>Note: {itinerary.note}</p>
+                    <p>Weight Limit: {itinerary.weight_limit}</p>
                 <div className="cardBtn">
-                  <button onClick={() => selectItinerary(itinerary)}>detail</button>
-                  <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
+                  <ReadMoreSharpIcon onClick={() => selectItinerary(itinerary)}>detail</ReadMoreSharpIcon>
+                  <DeleteIcon onClick={() => deleteItinerary(itinerary.id)}>delete</DeleteIcon>
                 </div>
               </div>
                 </CardContent>

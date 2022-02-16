@@ -1,13 +1,35 @@
 .itineraryDetailBox {
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    max-width: 400px;
+    margin: 1px;
 }
 
 .detailBox {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: bisque;
+    /* display: flex;
+    flex-wrap: wrap; */
+    background-color: rgb(155,213, 236);
     border: 2px solid black;
     padding-bottom: 10px;
+    padding-top: 10px;
+    max-width: 500px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%) translateY(10%);
+
+    /* margin-top: 2rem; */
+
+    
     /* margin: auto; */
     margin: 5px;
+    border-radius: 25px
+}
+
+.detailBtn {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%) translateY(90%);
+
 }
