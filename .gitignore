@@ -68,4 +68,4 @@ typings/
 package-lock.json
 
 # ignore uploaded pictures
-public/images
+# public/images
