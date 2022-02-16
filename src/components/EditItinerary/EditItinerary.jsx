@@ -25,13 +25,13 @@ function EditItinerary() {
 
         // need to dispatch the changes so it goes to the server
 
-        // dispatch({
-            //type: 'SAVE_ITINERARY_CHANGES',
-            //payload: itinerary
-       // })
+        dispatch({
+            type: 'SAVE_ITINERARY_CHANGES',
+            payload: itinerary
+       })
 
         // need to redirect back to the detail page
-        // history.push(`/itinerary/flyer/${itinerary.id}`)
+        history.push(`/itinerary/flyer/${itinerary.id}`)
     }
 
 
@@ -49,7 +49,10 @@ function EditItinerary() {
                             name="location"
                             value={itinerary.location}
                             required
-                            onChange={(event) => setLocation(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: {location:  evt.target.value}
+                            })}
                         />
                     </label>
                 </div>
@@ -61,7 +64,10 @@ function EditItinerary() {
                             name="departingCity"
                             value={itinerary.departing_city}
                             required
-                            onChange={(event) => setDepartingCity(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { departing_city: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -73,7 +79,10 @@ function EditItinerary() {
                             name="destination"
                             value={itinerary.destination_country}
                             required
-                            onChange={(event) => setDestinationCountry(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { destination_country: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -85,7 +94,10 @@ function EditItinerary() {
                             name="destinationCity"
                             value={itinerary.destination_city}
                             required
-                            onChange={(event) => setDestinationCity(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { destination_city: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -97,7 +109,10 @@ function EditItinerary() {
                             name="weightLimit"
                             value={itinerary.weight_limit}
                             required
-                            onChange={(event) => setWeightLimit(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { weight_limit: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -109,7 +124,10 @@ function EditItinerary() {
                             name="departureDate"
                             value={itinerary.departure_date}
                             required
-                            onChange={(event) => setDepartureDate(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { departure_date: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -121,8 +139,10 @@ function EditItinerary() {
                             name="arrivalDate"
                             value={itinerary.arrival_date}
                             required
-                            placeholder="7. Enter arrival date"
-                            onChange={(event) => setArrivalDate(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { arrival_date: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>
@@ -133,7 +153,10 @@ function EditItinerary() {
                             type="text"
                             name="note"
                             value={itinerary.note}
-                            onChange={(event) => setNote(event.target.value)}
+                            onChange={(evt) => dispatch({
+                                type: 'UPDATE_ACTIVE_ITINERARY',
+                                payload: { note: evt.target.value }
+                            })}
                         />
                     </label>
                 </div>

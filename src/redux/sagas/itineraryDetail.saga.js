@@ -24,6 +24,14 @@ function* fetchItineraryDetail(action) {
     }
 }
 
+function* saveItinerary(action) {
+    try{
+        yield axios.put(`api/user/itineraryDetail/${action.payload.id}`, action.payload);
+    } catch (err) {
+        console.log('Error editing itinerary detail', err);
+        
+    }
+}
 
 
 
@@ -31,6 +39,7 @@ function* fetchItineraryDetail(action) {
 
 function* itineraryDetailSaga() {
     yield takeLatest('ITINERARY_DETAIL', fetchItineraryDetail);
+    yield takeLatest('SAVE_ITINERARY_CHANGES', saveItinerary)
 }
 
 export default itineraryDetailSaga
