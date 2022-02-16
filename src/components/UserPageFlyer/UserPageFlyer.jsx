@@ -95,7 +95,11 @@ function UserPageFlyer() {
     setPhoto('');
   }
 
+  const [editable, setEditable] = useState(false);
 
+  function handleEditable() {
+      setEditable(!editable);
+  }
 
 
 
@@ -108,35 +112,37 @@ function UserPageFlyer() {
        
         <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
         
-        {/* <div> */}
+    
         <form onSubmit={onUploadPhoto}>
           <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/><br></br>
           <input type="submit" name="upload" vale="upload" />
         </form>
-        {/* </div> */}
+      
       </div>
       <div className="itineraryBox">
-        <p> Itineraries are here</p>
+        
         {
           itineraries.map((itinerary) => {
             return (
-              <Card sx={{margin: 0.5}}>
+              <Card sx={{margin: 0.5, marginLeft: 1}}>
                 <CardContent>
               <div className="itineraryBox2"
               key={itinerary.id}
               
               >
-                <h4>Departing City: {itinerary.departing_city}</h4>
-                <h4>Departure date: {itinerary.departure_date}</h4>
-                <h4>Arrival date: {itinerary.arrival_date}</h4>
-                <h4>Destination country: {itinerary.destination_country}</h4>
-                <h4>Destination City: {itinerary.destination_city}</h4>
-                <h4>Location: {itinerary.location}</h4>
-                <h4>Note: {itinerary.note}</h4>
-                <h4>Weight Limit: {itinerary.weight_limit}</h4>
-                <button onClick={() => selectItinerary(itinerary)}>detail</button>
-                <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
-             
+                <h4 className="cardHeading"><u> Itinerary</u></h4>
+                    <p>Departing City:<b> {itinerary.departing_city}</b> </p>
+                    <p>Departure date: <b> {itinerary.departure_date}</b></p>
+                    <p>Arrival date:<b> {itinerary.arrival_date}</b></p>
+                    <p>Destination country:<b> {itinerary.destination_country} </b></p>
+                    <p>Destination City:<b>{itinerary.destination_city}</b></p>
+                    <p>Location:<b> {itinerary.location}</b></p>
+                    <p>Note: <b>{itinerary.note}</b></p>
+                    <p>Weight Limit: <b>{itinerary.weight_limit}</b></p>
+                <div className="cardBtn">
+                  <button onClick={() => selectItinerary(itinerary)}>detail</button>
+                  <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
+                </div>
               </div>
                 </CardContent>
               </Card>
@@ -149,10 +155,12 @@ function UserPageFlyer() {
       {/* <div className="shippingRequestBox">
         <p> Shipping requests</p>
       </div> */}
-      <div>
+      <div className="createBtn">
+        <LogOutButton className="btn" />
         <Link to="/itinerary"> <button className="btn" onClick={onCreateItinerary}>create Itinerary</button> </Link>
+        
       </div>
-      <LogOutButton className="btn" />
+      
     </div>
   );
 }

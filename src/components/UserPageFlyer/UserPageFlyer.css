@@ -8,14 +8,34 @@
     margin: 5px;
 }
 
-.shippingRequestBox {
+/* .shippingRequestBox {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(155, 213, 236);
     border: 2px solid black;
-    padding-bottom: 10px;
-    /* margin: auto; */
+    padding-bottom: 10px; */
+    /* margin: auto;
     margin: 5px;
+} */
+
+.createBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.cardBtn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardHeading {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 0px;
+
 }
 
 .userProfileBox {
@@ -32,6 +52,7 @@
   
     /* border: 2px solid black; */
     max-width: 400px;
-    margin: 1px
+    margin: 1px;
+    /* border-radius: 25px; */
     /* margin: 0 auto; */
 }
