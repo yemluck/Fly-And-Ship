@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -24,20 +28,27 @@ function DefaultPage () {
 
     return(
         <>
-        <h1> Ready to save money?</h1>
-            <h4> Frequent flyers, ready to cut down on the price of expensive air tickets? Make money shipping directly for clients to subsidize air fare...
+         <Container sx={{maxWidth: 1000, marginTop: 15}}>
+        
+         <h1> Ready to save money?</h1>
+            <h3> Frequent flyers, ready to cut down on the price of expensive air tickets? <br></br>
+                Make money shipping directly for clients to subsidize air fare...<br></br>
 
 
-                Need instant shipment with guaranteed delivery? Try out our service ...</h4>
+                Need instant shipment with guaranteed delivery? Try out our service ...</h3>
 
-                <button onClick={onSelectFlyer}> Flyer </button>
+                <Stack direction="row" spacing={2}>
+                    <Button variant="contained" size="large" onClick={onSelectFlyer}> Flyer </Button>
 
-                <button onClick={onSelectShipper}> shipper </button>
+                    <Button variant="contained" size="large" onClick={onSelectShipper}> shipper </Button>
+                </Stack>
+
+                
 
                 <p>or <Link to="/login">login</Link> to an existing account</p>
 
 
-
+        </Container>
         </>
     )
 }

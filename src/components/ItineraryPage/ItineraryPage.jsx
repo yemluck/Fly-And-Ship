@@ -9,10 +9,9 @@ function Itinerary (){
     const user = useSelector(store=>store.user)
     return( 
         <>
-        <h1> This is the Itinerary page </h1>
-        <h3> Welcome {user.first_name} </h3>
-        <ItineraryForm />
-            <Link to="/userF"><button>cancel</button></Link>
+        <h3 style={{width: "15%", margin: "auto", marginBottom: "10px"}} > Create New Itinerary </h3>
+        <ItineraryForm style={{marginTop: 50}}/>
+        <Link to="/userF"><button className="btn" style={{margin: "auto", position: "absolute"}}>cancel</button></Link>
         </>
     )
 }
