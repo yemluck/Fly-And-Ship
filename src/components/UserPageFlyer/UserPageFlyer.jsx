@@ -4,6 +4,12 @@ import {useSelector, useDispatch} from 'react-redux';
 import './UserPageFlyer.css';
 import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
+// mui imports
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 function UserPageFlyer() {
@@ -96,27 +102,26 @@ function UserPageFlyer() {
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <p> Your type is: {user.type}</p>
-      <p> Your last name is: {user.last_name}</p>
+      <h2>Welcome to your dashboard, {user.username}!</h2>
+      
       <div className="userProfileBox">
        
         <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
         
-        <div>
+        {/* <div> */}
         <form onSubmit={onUploadPhoto}>
           <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/><br></br>
           <input type="submit" name="upload" vale="upload" />
         </form>
-        </div>
+        {/* </div> */}
       </div>
       <div className="itineraryBox">
         <p> Itineraries are here</p>
         {
           itineraries.map((itinerary) => {
             return (
-              
+              <Card sx={{margin: 0.5}}>
+                <CardContent>
               <div className="itineraryBox2"
               key={itinerary.id}
               
@@ -133,6 +138,8 @@ function UserPageFlyer() {
                 <button onClick={() => deleteItinerary(itinerary.id)}>delete</button>
              
               </div>
+                </CardContent>
+              </Card>
             )
           })
 
@@ -143,7 +150,7 @@ function UserPageFlyer() {
         <p> Shipping requests</p>
       </div> */}
       <div>
-        <Link to="/itinerary"> <button onClick={onCreateItinerary}>create Itinerary</button> </Link>
+        <Link to="/itinerary"> <button className="btn" onClick={onCreateItinerary}>create Itinerary</button> </Link>
       </div>
       <LogOutButton className="btn" />
     </div>

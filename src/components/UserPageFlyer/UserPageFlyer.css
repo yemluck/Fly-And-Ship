@@ -1,7 +1,7 @@
 .itineraryBox {
     display: flex;
     flex-wrap: wrap;
-    background-color: bisque;
+    background-color: rgb(155, 213, 236);
     border: 2px solid black;
     padding-bottom: 10px;
     /* margin: auto; */
@@ -11,7 +11,7 @@
 .shippingRequestBox {
     display: flex;
     flex-wrap: wrap;
-    background-color: bisque;
+    background-color: rgb(155, 213, 236);
     border: 2px solid black;
     padding-bottom: 10px;
     /* margin: auto; */
@@ -21,7 +21,7 @@
 .userProfileBox {
     display: flex;
     flex-wrap: wrap;
-    background-color: bisque;
+    background-color: rgb(78, 173, 197);
     border: 2px solid black;
     padding-bottom: 10px;
     /* margin: auto; */
@@ -30,8 +30,8 @@
 
 .itineraryBox2 {
   
-    border: 2px solid black;
+    /* border: 2px solid black; */
     max-width: 400px;
-    margin: 2px
+    margin: 1px
     /* margin: 0 auto; */
 }
