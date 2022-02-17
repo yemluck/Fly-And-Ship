@@ -8,11 +8,9 @@ function Request () {
 
     return(
         <>
-        <h1> this is the  create request page </h1>
-        <h3> Welcome {user.first_name} </h3>
-        <h4> You are a : {user.type} </h4>
+            <center><h3> Create new request</h3></center>
         <RequestForm />
-        <Link to="/userS"><button>cancel</button></Link>
+        <Link to="/userS"><button className="btn cancelBtn">cancel</button></Link>
         </>
     )
 

@@ -73,6 +73,7 @@ function RequestForm(){
                         type="text"
                         name="location"
                         value={location}
+                        placeholder="Enter location"
                         required
                         onChange={(event) => setLocation(event.target.value)}
                     />
@@ -85,6 +86,8 @@ function RequestForm(){
                         type="text"
                         name="destinationCountry"
                         value={destinationCountry}
+                        placeholder="Enter destination country"
+                        size="21"
                         required
                         onChange={(event) => setDestinationCountry(event.target.value)}
                     />
@@ -121,6 +124,7 @@ function RequestForm(){
                         type="number"
                         name="itemWeight"
                         value={itemWeight}
+                        placeholder="Enter weight"
                         required
                         onChange={(event) => setItemWeight(event.target.value)}
                     />
@@ -133,6 +137,7 @@ function RequestForm(){
                         type="text"
                         name="description"
                         value={description}
+                        placeholder="Enter item desc."
                         required
                         onChange={(event) => setDescription(event.target.value)}
                     />
@@ -146,6 +151,7 @@ function RequestForm(){
                         name="contact"
                         value={contact}
                         required
+                        placeholder='Enter phone number'
                         onChange={(event) => setContact(event.target.value)}
                     />
                 </label>
@@ -158,6 +164,7 @@ function RequestForm(){
                         name="email"
                         value={email}
                         required
+                        placeholder='Enter email address'
                         onChange={(event) => setEmail(event.target.value)}
                     />
                 </label>
