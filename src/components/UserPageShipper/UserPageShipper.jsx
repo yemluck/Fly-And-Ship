@@ -4,6 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import './UserPageShipper.css';
 import swal from 'sweetalert';
+// mui imports
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ReadMoreSharpIcon from '@mui/icons-material/ReadMoreSharp';
 
 function UserPageShipper() {
     
@@ -89,10 +96,8 @@ function UserPageShipper() {
 
     return (
         <div className="container">
-            <h2>Welcome, {user.username}!</h2>
-            <p>Your ID is: {user.id}</p>
-            <p> Your type is: {user.type}</p>
-            <p> Your last name is {user.last_name}</p>
+            <h2>Welcome to your dashboard, {user.first_name}!</h2>
+          
             <div className="userProfileBox">
                 <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
                 <div>
@@ -104,23 +109,28 @@ function UserPageShipper() {
             </div>
 
             <div className="requestBox">
-                <p> requests are here</p>
                 {
                     requests.map(request => {
                         return (
+                            <Card sx={{ margin: 0.5, marginLeft: 1 }}>
+                                <CardContent>
                             <div className="requestBox2"
                             key={request.id}
                             
                             >
-                                <h4>Location: {request.location}</h4>
-                                <h4>Destination country: {request.destination_country}</h4>
-                                <h4>Earliest pickup: {request.earliest_pickup}</h4>
-                                <h4>Latest delivery: {request.latest_delivery}</h4>
-                                <h4>Max weight: {request.item_weight}</h4>
-                                <h4>Item description: {request.item_description}</h4>
-                                <button onClick={() => selectRequest(request)}>detail</button>
-                                <button onClick={() => deleteRequest(request.id)}>delete</button>
+                                <h4 className="cardHeading"><u>Request</u></h4>
+                                <p>Location: {request.location}</p>
+                                <p>Destination country: {request.destination_country}</p>
+                                <p>Earliest pickup: {request.earliest_pickup}</p>
+                                <p>Latest delivery: {request.latest_delivery}</p>
+                                <p>Max weight: {request.item_weight} lbs</p>
+                                <div className="cardBtn">
+                                <ReadMoreSharpIcon onClick={() => selectRequest(request)}>detail</ReadMoreSharpIcon>
+                                <DeleteIcon onClick={() => deleteRequest(request.id)}>delete</DeleteIcon>
+                             </div>
                             </div>
+                                </CardContent>
+                            </Card>
                         )
                     })
 
@@ -128,7 +138,7 @@ function UserPageShipper() {
 
             </div>
             <div className="flyerBox">
-                <p> Flyers</p>
+                
                 {
                     results.map( result => {
                         return (
