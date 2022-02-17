@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 function ItineraryForm() {
     const history = useHistory();
@@ -62,7 +63,7 @@ function ItineraryForm() {
             name="location"
             value={location}
             required
-            placeholder="1. Enter location"
+            placeholder="Enter location"
             onChange={(event) => setLocation(event.target.value)}
         />
         </label>
@@ -75,7 +76,7 @@ function ItineraryForm() {
             name="departingCity"
             value={departingCity}
             required
-            placeholder="2. Enter departing City"
+            placeholder="Enter departing City"
             onChange={(event) => setDepartingCity(event.target.value)}
         />
         </label>
@@ -88,7 +89,7 @@ function ItineraryForm() {
             name="destination"
             value={destinationCountry}
             required
-            placeholder="3. Enter destination country"
+            placeholder="Enter destination country"
             onChange={(event) => setDestinationCountry(event.target.value)}
         />
         </label>
@@ -101,7 +102,7 @@ function ItineraryForm() {
             name="destinationCity"
             value={destinationCity}
             required
-            placeholder="4. Enter destination city"
+            placeholder="Enter destination city"
             onChange={(event) => setDestinationCity(event.target.value)}
         />
         </label>
@@ -114,7 +115,7 @@ function ItineraryForm() {
             name="weightLimit"
             value={weightLimit}
             required
-            placeholder="5. Enter weight limit"
+            placeholder="Enter weight limit"
             onChange={(event) => setWeightLimit(event.target.value)}
         />
         </label>
@@ -127,7 +128,6 @@ function ItineraryForm() {
             name="departureDate"
             value={departureDate}
             required
-            placeholder="6. Enter departure date"
             onChange={(event) => setDepartureDate(event.target.value)}
         />
         </label>
@@ -140,7 +140,6 @@ function ItineraryForm() {
             name="arrivalDate"
             value={arrivalDate}
             required
-            placeholder="7. Enter arrival date"
             onChange={(event) => setArrivalDate(event.target.value)}
         />
         </label>
@@ -153,7 +152,7 @@ function ItineraryForm() {
             name="note"
             value={note}
            
-            placeholder="8. Enter any comment"
+            placeholder="Enter any comment"
             onChange={(event) => setNote(event.target.value)}
         />
         </label>

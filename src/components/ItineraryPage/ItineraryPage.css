@@ -4,3 +4,9 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.cancelBtn {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%) translateY(70%);
+}

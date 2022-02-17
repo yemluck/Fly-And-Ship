@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 // mui components
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function ItineraryDetail() {
@@ -25,7 +26,7 @@ function ItineraryDetail() {
     return(
         <>
 
-        <div className="detailBox">
+        <div className="detailBox2">
         <Card sx={{ margin: 0.5, margin: "auto" }}>
          <CardContent>
         <div className="itineraryDetailBox">
@@ -36,7 +37,7 @@ function ItineraryDetail() {
             <p>Departure date: {itinerary.departure_date}</p>
             <p>Arrival date: {itinerary.arrival_date}</p>
             <p>Maximum weight: {itinerary.weight_limit}</p>
-                    <Link to={`/itinerary/${itinerary.id}/edit` }><button><h2> edit</h2></button></Link>
+                    <Link to={`/itinerary/${itinerary.id}/edit` }><EditIcon className="editBtn"><h2> edit</h2></EditIcon></Link>
         </div>
         </CardContent>
         </Card>

@@ -1,0 +1,16 @@
+.createItineraryBtn {
+    position: relative;
+    transform: translateX(1100%)
+}
+
+.formPanelItinerary {
+box-sizing: border-box;
+max-width: 370px;
+padding: 25px;
+margin: 0 auto 20px;
+background-color: #efefef;
+border-radius: 3px;
+box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+
+}
+
