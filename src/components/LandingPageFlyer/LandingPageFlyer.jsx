@@ -16,40 +16,38 @@ function LandingPageFlyer() {
 
   return (
     <div className="container">
-      <h2>{heading}</h2>
+      <h2>{heading} New User</h2>
 
       <div className="grid">
         <div className="grid-col grid-col_8">
+          <h4> The busiest international flight route is?</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+            If your guess is New York - London, you are far from the truth, the 
+            record holders do not travel to Europe or the USA.
+            In fact, the busiest international route is Hong-Kong - Taipei,
+             Taiwan: 6.5 million passengers travelled between the two 
+            Asian destinations in 2018 on almost 27,500 flights.
+            Another Asian city-pair ranks top by number of flights - 
+            planes take-off between Kuala Lumpur and Singapore every 18 minutes on average,
+             setting the record of 30,537 flights a year. This is also one of the shortest 
+             international routes as the flight time is just over 1 hour.
+          </p>
+          <h4> Flight safety</h4>
+          <p>
+            Data shows that the odds of dying in a plane crash are 1 in 11,000,000,
+             which is genuinely impressive when compared to 1 in 5,000 for car accidents.
           </p>
 
+          <h4> Luggage Safety</h4>
           <p>
-            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
-            finibus metus facilisis. Nullam eget lectus non urna rhoncus
-            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
-            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
-            congue.
+            1.7 million bags was lost in 2019. Unfortunately, flying is not as safe
+             for your luggage - 2.5 million suitcases were reported lost
+              or mishandled between June and September per 1,000 passengers.
           </p>
-
+          <h4> The most expensive plane ticket costs $43,535</h4>
           <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
+            This is the price for a round trip between New York and Hong Kong on a Lufthansa
+             flight featuring Michelin starred meals and a standalone seat and bed set up.
           </p>
         </div>
         <div className="grid-col grid-col_4">
