@@ -110,15 +110,11 @@ function UserPageFlyer() {
       <h2>Welcome to your dashboard, {user.first_name}!</h2>
       
       <div className="userProfileBox">
-       
         <img src={`/images/${image.path}`} width={150} height={150} alt="upload profile picture" />
-        
-    
         <form onSubmit={onUploadPhoto}>
           <input type="file" onChange={(evt) => setPhoto(evt.target.files[0]) }/><br></br>
           <input type="submit" name="upload" vale="upload" />
         </form>
-      
       </div>
       <div className="itineraryBox">
         
@@ -138,7 +134,6 @@ function UserPageFlyer() {
                     <p>Destination country:{itinerary.destination_country} </p>
                     <p>Destination City:{itinerary.destination_city}</p>
                     <p>Location:{itinerary.location}</p>
-                    <p>Note: {itinerary.note}</p>
                     <p>Weight Limit: {itinerary.weight_limit}</p>
                 <div className="cardBtn">
                   <ReadMoreSharpIcon onClick={() => selectItinerary(itinerary)}>detail</ReadMoreSharpIcon>

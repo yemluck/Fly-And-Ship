@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
+// mui components
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function RequestDetail() {
@@ -73,19 +77,23 @@ function RequestDetail() {
 
     return(
         <>
-        <div className="detailBox">
-        <h1> In request detail </h1>
+        <div className="requestDetailBox2">
+         <Card sx={{ margin: 0.5, margin: "auto" }}>
+        <CardContent>
         <div className="requestDetailBox">
-        <h3>Item description: {request.item_description}</h3>
-        <h3>Item weight: {request.item_weight}</h3>
-        <h3>Destination country: {request.destination_country}</h3>
-        <h3>Earliest pickup: {request.earliest_pickup}</h3>
-        <h3>Latest delivery: {request.latest_delivery}</h3>
-        <h3>Present location: {request.location}</h3>
-        <h3>Phone no: {request.contact}</h3>
-        <h3>Email: {request.email}</h3>
+        <h4><u>Request</u></h4>
+        <p>Item description: {request.item_description}</p>
+        <p>Item weight: {request.item_weight}</p>
+        <p>Destination country: {request.destination_country}</p>
+        <p>Earliest pickup: {request.earliest_pickup}</p>
+        <p>Latest delivery: {request.latest_delivery}</p>
+        <p>Present location: {request.location}</p>
+        <p>Phone no: {request.contact}</p>
+        <p>Email: {request.email}</p>
                     <Link to={`/request/${request.id}/edit`} ><button> <h2> edit </h2> </button></Link>
         </div>
+        </CardContent>
+        </Card>
        
         </div>
         <div className="detailBox">

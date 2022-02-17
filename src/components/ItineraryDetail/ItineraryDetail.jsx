@@ -30,13 +30,15 @@ function ItineraryDetail() {
         <Card sx={{ margin: 0.5, margin: "auto" }}>
          <CardContent>
         <div className="itineraryDetailBox">
+            <h4><u>Itinerary</u></h4>
             <p>location: {itinerary.location}</p>
             <p>Departing city:{itinerary.departing_city}</p>
             <p>Destination country: {itinerary.destination_country}</p>
             <p>Destination city: {itinerary.destination_city}</p>
             <p>Departure date: {itinerary.departure_date}</p>
             <p>Arrival date: {itinerary.arrival_date}</p>
-            <p>Maximum weight: {itinerary.weight_limit}</p>
+            <p>Maximum weight: {itinerary.weight_limit} lbs</p>
+            <p> Note: {itinerary.note}</p>
                     <Link to={`/itinerary/${itinerary.id}/edit` }><EditIcon className="editBtn"><h2> edit</h2></EditIcon></Link>
         </div>
         </CardContent>
