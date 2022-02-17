@@ -163,7 +163,7 @@ function RequestForm(){
                 </label>
             </div>
             <div>
-                <input className="btn" type="submit" name="create" value="create" />
+                <center><input className="btn" type="submit" name="create" value="create" /></center>
             </div>
 
         </form>
