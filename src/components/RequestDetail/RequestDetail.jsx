@@ -97,12 +97,12 @@ function RequestDetail() {
         </Card>
        
         </div>
-        <div className="requestBox">
+        <div className="searchResultBox">
            
                    {
                        searchResult.map(result => {
                            return (
-                               <Card sx={{ margin: 0.5, margin: "auto" }}>
+                               <Card sx={{ margin: 0.5, marginLeft: 1 }}>
                                 <CardContent>
                                <div className="requestDetailBox"
                                    key={result.id}

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
+import './EditRequest.css'
 
 
 function EditRequest(){
@@ -36,7 +37,7 @@ function EditRequest(){
 
     return(
         <>
-        <h2> in Edit Request </h2>
+        
             <form className="formPanel" onSubmit={submitEdit}>
                 <div>
                     <label htmlFor="location">
