@@ -24,5 +24,16 @@
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
   position: relative;
-  transform: translateX(0%) translateY(10%);
+  transform: translateX(0%) translateY(-5%);
+}
+
+.findFlyersBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }

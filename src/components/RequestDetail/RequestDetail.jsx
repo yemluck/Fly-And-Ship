@@ -9,6 +9,7 @@ import swal from 'sweetalert';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import EditIcon from '@mui/icons-material/Edit';
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 
 
 function RequestDetail() {
@@ -90,42 +91,43 @@ function RequestDetail() {
         <p>Present location: {request.location}</p>
         <p>Phone no: {request.contact}</p>
         <p>Email: {request.email}</p>
-                    <Link to={`/request/${request.id}/edit`} ><button> <h2> edit </h2> </button></Link>
+                    <Link to={`/request/${request.id}/edit`} ><EditIcon> <h2> edit </h2> </EditIcon></Link>
         </div>
         </CardContent>
         </Card>
        
         </div>
-        <div className="detailBox">
-            <div className="requestDetailBox">
-                <h2>Available flyers matching request</h2>
-            </div>
-              
-
+        <div className="requestBox">
+           
                    {
                        searchResult.map(result => {
                            return (
+                               <Card sx={{ margin: 0.5, margin: "auto" }}>
+                                <CardContent>
                                <div className="requestDetailBox"
                                    key={result.id}
                                 >
-                                   <h3> Location: {result.location}</h3>
-                                   <h3> Departing city: {result.departing_city}</h3>
-                                   <h3> Destination country: {result.destination_country}</h3>
-                                   <h3> Destination city: {result.destination_city}</h3>
-                                   <h3> Departure date: {result.departure_date}</h3>
-                                   <h3> Arrival date: {result.arrival_date}</h3>
-                                   <h3> Maximum weight limit: {result.weight_limit}</h3>
-                                   <h3> Note: {result.note}</h3>
-                                   <Popup trigger={<button onClick={contactFlyer}><h3>Contact</h3></button>} position="right center">
-                                       <div>
+                                   <p> Location: {result.location}</p>
+                                   <p> Departing city: {result.departing_city}</p>
+                                   <p> Destination country: {result.destination_country}</p>
+                                   <p> Destination city: {result.destination_city}</p>
+                                   <p> Departure date: {result.departure_date}</p>
+                                   <p> Arrival date: {result.arrival_date}</p>
+                                   <p> Maximum weight limit: {result.weight_limit}</p>
+                                   <p> Note: {result.note}</p>
+                                           <Popup trigger={<PermContactCalendarIcon onClick={contactFlyer}><h3>Contact</h3></PermContactCalendarIcon>} position="right center">
+                                       <div style={{backgroundColor: "lightblue"}}>
                                        <h3> Flyer's Name: {result.first_name} {result.last_name}</h3>
                                        <h3> Contact: {result.contact}</h3>
                                        <h3> email: {result.email}</h3>
                                        </div>
                                    </Popup>
+                                 
                                    {/* <button onClick={() => contactFlyer(result)}><h3> Contact </h3></button> */}
 
                                 </div>
+                                </CardContent>
+                               </Card>
 
                            )
                        })
@@ -136,9 +138,10 @@ function RequestDetail() {
             </div>
             
         
-
-            <Link to="/userS"> <button onClick={clearResult}> <h3>Back to Dashboard</h3></button></Link>
-         <button onClick={searchFlyers}><h3>Find Flyers</h3></button>
+         <div className="findFlyersBtn">
+            <Link to="/userS"> <button className="btn" onClick={clearResult}>Back to Dashboard</button></Link>
+         <button className="btn" onClick={searchFlyers}>Find Flyers</button>
+         </div>
         </>
     )
 

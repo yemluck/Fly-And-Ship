@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ReadMoreSharpIcon from '@mui/icons-material/ReadMoreSharp';
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 
 function UserPageShipper() {
     
@@ -34,7 +35,7 @@ function UserPageShipper() {
         // dispatch to fetch user shipping requests
         dispatch({type: 'FETCH_REQUEST'});
         dispatch({ type: 'GET_PHOTO'}); // fetch profile picture on page load
-    }, []); // end useEffect
+    }, [requests.length]); // end useEffect
 
     const selectRequest = (request) => {
         console.log('in selectRequest');
@@ -60,6 +61,8 @@ function UserPageShipper() {
                         type: 'DELETE_REQUEST',
                         payload: id
                     }) // end dispatch
+                    // trying something new
+                  
                 } else {
                     swal("Request not deleted")
                 }
@@ -142,25 +145,29 @@ function UserPageShipper() {
                 {
                     results.map( result => {
                         return (
+                            <Card sx={{ margin: 0.5, marginLeft: 1 }}>
+                            <CardContent>
                             <div className="requestBox2"
                             key={result.id}
                             >
-                                <h4>Destination: {result.destination_country}</h4>
-                                <h4>City: {result.destination_city}</h4>
-                                <h4>Departure date:{result.departure_date}</h4>
-                                <h4>Arrival date: {result.arrival_date}</h4>
-                                <h4>Max weight: {result.weight_limit}</h4>
-                                <h4>Comment: {result.note}</h4>
-                                <button> contact </button>
-                                <button> delete </button>
+                                <h4 className="cardHeading"><u>Matching itinerary</u></h4>
+                                <p>Destination: {result.destination_country}</p>
+                                <p>City: {result.destination_city}</p>
+                                <p>Departure date:{result.departure_date}</p>
+                                <p>Arrival date: {result.arrival_date}</p>
+                                <p>Max weight: {result.weight_limit}</p>
+                                <p>Comment: {result.note}</p>
+                                <PermContactCalendarIcon> contact </PermContactCalendarIcon>
                             </div>
+                            </CardContent>
+                            </Card>
                         )
                     })
                 }
             </div>
             <div className="createRequestBtn">
-                <Link to="/request"><button className="btn" onClick={onCreateRequest}>create request</button></Link>
                 <LogOutButton className="btn" />
+                <Link to="/request"><button className="btn" onClick={onCreateRequest}>create request</button></Link>
             </div>
         </div>
     );
