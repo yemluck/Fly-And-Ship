@@ -33,3 +33,11 @@
     max-width: 400px;
     margin: 1px;
 }
+
+.createRequestBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    flex-direction: row-reverse;
+    justify-content: space-between; 
+}

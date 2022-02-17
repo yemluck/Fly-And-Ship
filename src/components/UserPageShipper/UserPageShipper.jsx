@@ -158,10 +158,10 @@ function UserPageShipper() {
                     })
                 }
             </div>
-            <div>
-                <Link to="/request"><button onClick={onCreateRequest}>create request</button></Link>
+            <div className="createRequestBtn">
+                <Link to="/request"><button className="btn" onClick={onCreateRequest}>create request</button></Link>
+                <LogOutButton className="btn" />
             </div>
-            <LogOutButton className="btn" />
         </div>
     );
 }
