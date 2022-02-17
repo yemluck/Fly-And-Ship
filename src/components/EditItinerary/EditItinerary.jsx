@@ -39,7 +39,7 @@ function EditItinerary() {
 
     return(
         <>
-        <h2> in Edit Itinerary</h2>
+       
             <form className="formPanel" onSubmit={submitEdit}>
                 <div>
                     <label htmlFor='location'>

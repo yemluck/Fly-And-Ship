@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import './ItineraryForm.css';
+
 
 function ItineraryForm() {
     const history = useHistory();
@@ -54,7 +56,7 @@ function ItineraryForm() {
     }
 
     return(
-        <form className="formPanel" onSubmit={createItinerary}>
+        <form className="formPanelItinerary" onSubmit={createItinerary}>
         <div>
         <label htmlFor='location'>
             Location:
@@ -89,6 +91,7 @@ function ItineraryForm() {
             name="destination"
             value={destinationCountry}
             required
+            size="22"
             placeholder="Enter destination country"
             onChange={(event) => setDestinationCountry(event.target.value)}
         />
@@ -158,7 +161,7 @@ function ItineraryForm() {
         </label>
         </div>
         <div>
-            <input className="btn" type="submit" name="create" value="Create" />
+            <input className="btn createItineraryBtn" type="submit" name="create" value="create" />
         </div>
         
         

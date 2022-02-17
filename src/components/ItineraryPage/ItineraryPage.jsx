@@ -10,7 +10,7 @@ function Itinerary (){
     return( 
         <>
         <h3 style={{width: "15%", margin: "auto", marginBottom: "10px"}} > Create New Itinerary </h3>
-        <ItineraryForm style={{marginTop: 50}}/>
+        <ItineraryForm />
         <Link to="/userF"><button className="btn cancelBtn" >cancel</button></Link>
         </>
     )
