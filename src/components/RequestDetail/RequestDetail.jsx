@@ -84,7 +84,7 @@ function RequestDetail() {
         <div className="requestDetailBox">
         <h4><u>Request</u></h4>
         <p>Item description: {request.item_description}</p>
-        <p>Item weight: {request.item_weight}</p>
+        <p>Item weight: {request.item_weight} lbs</p>
         <p>Destination country: {request.destination_country}</p>
         <p>Earliest pickup: {request.earliest_pickup}</p>
         <p>Latest delivery: {request.latest_delivery}</p>
