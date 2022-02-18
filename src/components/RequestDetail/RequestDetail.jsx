@@ -113,7 +113,7 @@ function RequestDetail() {
                                    <p> Destination city: {result.destination_city}</p>
                                    <p> Departure date: {result.departure_date}</p>
                                    <p> Arrival date: {result.arrival_date}</p>
-                                   <p> Maximum weight limit: {result.weight_limit}</p>
+                                   <p> Maximum weight limit: {result.weight_limit} lbs</p>
                                    <p> Note: {result.note}</p>
                                            <Popup trigger={<PermContactCalendarIcon onClick={contactFlyer}><h3>Contact</h3></PermContactCalendarIcon>} position="right center">
                                        <div style={{backgroundColor: "lightblue"}}>

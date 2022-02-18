@@ -134,7 +134,7 @@ function UserPageFlyer() {
                     <p>Destination country:{itinerary.destination_country} </p>
                     <p>Destination City:{itinerary.destination_city}</p>
                     <p>Location:{itinerary.location}</p>
-                    <p>Weight Limit: {itinerary.weight_limit}</p>
+                    <p>Weight Limit: {itinerary.weight_limit} lbs</p>
                 <div className="cardBtn">
                   <ReadMoreSharpIcon onClick={() => selectItinerary(itinerary)}>detail</ReadMoreSharpIcon>
                   <DeleteIcon onClick={() => deleteItinerary(itinerary.id)}>delete</DeleteIcon>

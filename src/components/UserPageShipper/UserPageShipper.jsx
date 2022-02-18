@@ -155,7 +155,7 @@ function UserPageShipper() {
                                 <p>City: {result.destination_city}</p>
                                 <p>Departure date:{result.departure_date}</p>
                                 <p>Arrival date: {result.arrival_date}</p>
-                                <p>Max weight: {result.weight_limit}</p>
+                                <p>Max weight: {result.weight_limit} lbs</p>
                                 <p>Comment: {result.note}</p>
                                 <PermContactCalendarIcon> contact </PermContactCalendarIcon>
                             </div>
