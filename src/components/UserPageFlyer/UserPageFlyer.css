@@ -24,6 +24,7 @@
     padding-top: 20px;
     flex-direction: row-reverse;
     justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .cardBtn {
