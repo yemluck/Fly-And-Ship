@@ -16,7 +16,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 });
 
-router.get('/request', (req, res) => {
+router.get('/request', rejectUnauthenticated, (req, res) => {
     // Add query to fetch request
     const queryText = `
         SELECT
@@ -45,7 +45,7 @@ router.get('/request', (req, res) => {
 })
 
 // POST endpoint
-router.post('/request', (req, res, next) => {
+router.post('/request', rejectUnauthenticated, (req, res, next) => {
     const location = req.body.location;
     const destinationCountry = req.body.destinationCountry;
     const earliestPickup = req.body.earliestPickup;
@@ -84,7 +84,7 @@ router.post('/request', (req, res, next) => {
         })
 })
 
-router.delete('/request/:id', (req, res) => {
+router.delete('/request/:id', rejectUnauthenticated, (req, res) => {
     console.log('id is', req.params.id);
 
     const queryText = `
