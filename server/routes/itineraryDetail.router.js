@@ -16,7 +16,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 });
 
-router.get('/itineraryDetail', (req, res) => {
+router.get('/itineraryDetail', rejectUnauthenticated, (req, res) => {
     console.log('this is req.query', Number(req.query.id));
     const id = Number(req.query.id)
 
@@ -48,7 +48,7 @@ router.get('/itineraryDetail', (req, res) => {
     
 })
 
-router.put('/itineraryDetail/:id', (req, res) => {
+router.put('/itineraryDetail/:id', rejectUnauthenticated, (req, res) => {
     console.log('this is req.body in put', req.body);
     console.log('this is put req.params.id', req.params.id);
     console.log('type of put req.params.id', typeof req.params.id);

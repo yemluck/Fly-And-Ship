@@ -48,7 +48,7 @@ router.get('/itinerary', (req, res) => {
 })
 
 // POST endpoint
-router.post('/itinerary', (req, res, next) => {
+router.post('/itinerary', rejectUnauthenticated, (req, res, next) => {
     const location = req.body.location;
     const departingCity = req.body.departingCity;
     const destinationCountry = req.body.destinationCountry;
@@ -89,7 +89,7 @@ router.post('/itinerary', (req, res, next) => {
 })
 
 // delete endpoint
-router.delete('/itinerary/:id', (req, res) => {
+router.delete('/itinerary/:id', rejectUnauthenticated, (req, res) => {
     console.log('id is', req.params.id);
 
     const queryText =  `

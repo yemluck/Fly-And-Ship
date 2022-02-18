@@ -53,7 +53,7 @@ router.post('/upload', upload.single('image'), (req, res, next) => {
   
 })
 
-router.get('/upload', (req, res) => {
+router.get('/upload', rejectUnauthenticated, (req, res) => {
     const queryText = `
         SELECT *
         FROM "image"

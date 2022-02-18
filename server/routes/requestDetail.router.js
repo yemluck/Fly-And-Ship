@@ -16,7 +16,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 });
 
-router.get('/requestDetail/:id', (req, res) => {
+router.get('/requestDetail/:id', rejectUnauthenticated, (req, res) => {
     console.log('this is GET req.params:', req.params.id);
     //const id = Number(req.query.id)
 
@@ -48,7 +48,7 @@ router.get('/requestDetail/:id', (req, res) => {
     
 })
 
-router.put('/requestDetail/:id', (req, res) => {
+router.put('/requestDetail/:id', rejectUnauthenticated, (req, res) => {
     console.log('this is req.body in put', req.body);
     console.log('this is put req.params.id', req.params.id);
     console.log('type of put req.params.id', typeof req.params.id);

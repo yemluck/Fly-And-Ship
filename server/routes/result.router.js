@@ -17,7 +17,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 });
 
 
-router.get('/result', (req, res) => {
+router.get('/result', rejectUnauthenticated, (req, res) => {
     console.log('this is req.query', req.query);
     
     const a = req.query.destination_country
@@ -68,7 +68,7 @@ router.get('/result', (req, res) => {
         })
 })
 
-router.get('/detailResult', (req, res) => {
+router.get('/detailResult', rejectUnauthenticated, (req, res) => {
     console.log('this is req.query', req.query);
 
     const a = req.query.destination_country
