@@ -5,7 +5,6 @@
 -- Otherwise you will have errors!
 -- Database name is solo-project
 
-DROP TABLE "user";
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
