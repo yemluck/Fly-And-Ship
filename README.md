@@ -1,4 +1,3 @@
-![License](https://img.shields.io/github/license/@yemluck/https://github.com/yemluck/solo-project.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/@yemluck/https://github.com/yemluck/solo-project.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/@yemluck/https://github.com/yemluck/solo-project.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/@yemluck/https://github.com/yemluck/solo-project.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/@yemluck/https://github.com/yemluck/solo-project.svg?style=for-the-badge)
     
 # Fly&Ship
 
@@ -90,9 +89,6 @@ This code is also heavily commented. We recommend reading through the comments, 
   - ProtectedRoute/ProtectedRoute
 
 
-## License
-
-<a href="https://choosealicense.com/licenses/bsl-1.0/"><img src="https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/boost.svg" height=40 />Boost Software License 1.0</a>
 
 ## Acknowledgements
 
