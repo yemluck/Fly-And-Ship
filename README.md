@@ -5,6 +5,7 @@
 
 - [Description](#description)
 - [Built With](#built-with)
+- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -20,6 +21,15 @@ This project is about a peer to peer web application to connect frequent flyers 
 ## Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" height="40px" width="40px" /></a><a href="https://www.heroku.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/heroku/heroku-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://jquery.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original.svg" height="40px" width="40px" /></a><a href="https://material-ui.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
+
+## Screenshots
+
+<img src="src/photos/fly_and_ship_1.png" alt="Fly and Ship screenshot 1" height="700px" width="700px"/>
+<img src="src/photos/fly_and_ship_2.png" alt="Fly and Ship screenshot 2" height="700px" width="700px"/>
+<img src="src/photos/fly_and_ship_3.png" alt="Fly and Ship screenshot 3" height="700px" width="700px"/>
+<img src="src/photos/fly_and_ship_4.png" alt="Fly and Ship screenshot 4" height="700px" width="700px"/>
+<img src="src/photos/fly_and_ship_5.png" alt="Fly and Ship screenshot 5" height="700px" width="700px"/>
+<img src="src/photos/fly_and_ship_6.png" alt="Fly and Ship screenshot 6" height="700px" width="700px"/>
 
 ## Getting Started
 
