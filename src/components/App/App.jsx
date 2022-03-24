@@ -96,7 +96,11 @@ function App() {
             exact
             path="/userF"
           >
-            <UserPageFlyer />
+            {(user.type === "flyer") ?
+                <UserPageFlyer />:
+                // Otherwise, redirect to
+                <Redirect to="/userS" />
+            }
           </ProtectedRoute>
           
           <ProtectedRoute
@@ -104,21 +108,34 @@ function App() {
             exact
             path="/userS"
           >
-            <UserPageShipper />
+            {(user.type === "shipper") ?
+              <UserPageShipper /> :
+              // Otherwise, redirect to
+              <Redirect to="/userF" />
+            }
           </ProtectedRoute>
 
           <ProtectedRoute
             exact
             path="/itinerary"
           >
-            <Itinerary />
+            {(user.type === "flyer") ?
+              <Itinerary /> :
+              // Otherwise, redirect to
+              <Redirect to="/request" />
+            }
+            
           </ProtectedRoute>
 
           <ProtectedRoute
             exact
             path="/request"
           >
-            <Request />
+            {(user.type === "shipper") ?
+              <Request /> :
+              // Otherwise, redirect to
+              <Redirect to="/itinerary" />
+            }
           </ProtectedRoute>
 
           <ProtectedRoute
