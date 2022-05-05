@@ -48,7 +48,7 @@ function AboutPage() {
             <h3> Future development to tackle</h3>
             <p>Introduction of Map API for distance filtering</p>
             <h3> Appreciation </h3>
-          <p>I acknowledge my Prime Woodall cohort, my instructor, my pod mates and everyone
+          <p>I acknowledge my Prime Woodall cohort, my instructor, my pod mates and everyone 
              who contributed to the success of this project</p>
       
       </div>
