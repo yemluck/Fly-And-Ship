@@ -46,6 +46,8 @@ function RegisterForm({type}) {
             type="text"
             name="username"
             value={username}
+            placeholder="Minimum 3 chars"
+            pattern="^[a-z0-9_-]{3,16}$"
             required
             onChange={(event) => setUsername(event.target.value)}
           />
@@ -82,6 +84,7 @@ function RegisterForm({type}) {
             type="number"
             name="contact"
             value={contact}
+            placeholder="Numbers only"
             required
             onChange={(event) => setContact(event.target.value)}
           />
@@ -91,7 +94,7 @@ function RegisterForm({type}) {
         <label htmlFor="email" >
           Email:        
           <input
-            type="text"
+            type="email"
             name="email"
             value={email}
             required
