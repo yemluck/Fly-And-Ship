@@ -46,8 +46,8 @@ function RegisterForm({type}) {
             type="text"
             name="username"
             value={username}
-            placeholder="Minimum 3 chars"
             pattern="^[a-z0-9_-]{3,16}$"
+            title='Minimum of 3 characters'
             required
             onChange={(event) => setUsername(event.target.value)}
           />
